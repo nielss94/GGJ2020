@@ -55,10 +55,6 @@ public class Hovercar : MonoBehaviour
         }
 
 
-
-
-            Debug.Log(motorStarted);
-
        // Steering
        _currentTurnRate = 0.0f;
         if (Mathf.Abs(_move.x) > _deadZone)
