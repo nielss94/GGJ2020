@@ -14,7 +14,7 @@ public class ModelRotation : MonoBehaviour
 
     private void Update()
     {
-        if (_player.MoveInput != Vector3.zero)
+        if (_player.MoveInput != Vector3.zero && _player.CanMove)
         {
             Quaternion rotation = Quaternion.LookRotation(_player.MoveInput, Vector3.up);
             transform.localRotation = rotation;

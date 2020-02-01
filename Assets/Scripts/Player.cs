@@ -11,6 +11,8 @@ public class Player : MonoBehaviour
     [SerializeField] private float respawnTime = 3f;
     
     private bool _canMove = true;
+    public bool CanMove => _canMove;
+
     private bool _isOnPlatform = false;
     
     private PlayerStation _playerStation = null;
@@ -49,9 +51,7 @@ public class Player : MonoBehaviour
     
     private void Update()
     {
-        //_rigidbody.isKinematic = _isOnPlatform;
-
-        
+        _rigidbody.isKinematic = _isOnPlatform;
     }
 
     private void FixedUpdate()
@@ -61,8 +61,9 @@ public class Player : MonoBehaviour
             Vector3 nextPos = _rigidbody.position + transform.TransformDirection(_move * (moveSpeed * Time.deltaTime));
             _rigidbody.MovePosition(nextPos);
         }
-        // _isOnPlatform = Physics.SphereCast(floorDetection.position, .05f, Vector3.down, out var hit, .65f,
-        //     LayerMask.GetMask("Platform"));
+        
+        _isOnPlatform = Physics.SphereCast(floorDetection.position, .05f, Vector3.down, out var hit, .65f,
+            LayerMask.GetMask("Platform"));
     }
 
     
