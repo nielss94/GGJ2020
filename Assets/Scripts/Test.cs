@@ -1,18 +1,20 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Test : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private Rigidbody _rigidbody;
+
+    private void Update()
     {
-        
+        transform.Rotate(0,0,3 * Time.deltaTime);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
-        
+        // Quaternion rot = Quaternion.Euler(0, 0, 3 * Time.deltaTime);
+        // _rigidbody.MoveRotation(_rigidbody.rotation * rot);
     }
 }
