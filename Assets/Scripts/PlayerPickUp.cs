@@ -5,25 +5,49 @@ using UnityEngine;
 
 public class PlayerPickUp : MonoBehaviour
 {
-    [SerializeField] private float pickupRange = 1f;
-    private Resource _pickUpResource = null;
+    private GameObject _hovering = null;
+    private GameObject _currentPickUp = null;
+    
+    private List<GameObject> _hoverings = new List<GameObject>();
+    private ConveyorBelt _conveyorBelt = null;
 
-
-    private void Update()
+    private void Awake()
     {
-        if (!Physics.Raycast(transform.position, transform.forward, out var hit, pickupRange,
-            LayerMask.GetMask("ConveyorBeltPart"))) return;
-        
-        if (!TryGetComponent(out Resource resource)) return;
-            
-        if (_pickUpResource != resource)
+        _conveyorBelt = FindObjectOfType<ConveyorBelt>();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("ConveyorBeltPart"))
         {
-            _pickUpResource = resource;
+            _hoverings.Add(other.gameObject);
+            _hovering = other.gameObject;
         }
     }
 
-    public void OnUse()
+    private void OnTriggerExit(Collider other)
     {
-        print("ASD");
+        if (_hoverings.Contains(other.gameObject))
+        {
+            _hoverings.Remove(other.gameObject);
+            if (_hoverings.Count > 0)
+            {
+                _hovering = _hoverings[0];
+            }
+            else
+            {
+                _hovering = null;
+            }
+        }
+    }
+
+    public void PickUp()
+    {
+        if (_hovering != null && _currentPickUp == null)
+        {
+            _hovering.transform.SetParent(transform);
+            _conveyorBelt.RemoveFromBelt(_hovering);
+            _currentPickUp = _hovering;
+        }
     }
 }
