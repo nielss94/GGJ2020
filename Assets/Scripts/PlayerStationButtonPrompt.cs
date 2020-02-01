@@ -10,16 +10,22 @@ public class PlayerStationButtonPrompt : MonoBehaviour
     [SerializeField]
     private Transform buttonPromptLocation = null;
     [SerializeField]
-    private GameObject buttonPrompt = null;
+    private GameObject useButtonPrompt = null;
+    [SerializeField]
+    private GameObject repairButtonPrompt = null;
     [SerializeField]
     private PlayerStation playerStation = null;
-    
-    private GameObject _buttonPromptInstance = null;
+
+    private GameObject _useButtonPromptInstance = null;
+    private GameObject _repairButtonPromptInstance = null;
 
     private void Awake()
     {
-        _buttonPromptInstance = Instantiate(buttonPrompt, GameObject.FindGameObjectWithTag("UI").transform);
-        _buttonPromptInstance.SetActive(false);
+        _useButtonPromptInstance = Instantiate(useButtonPrompt, GameObject.FindGameObjectWithTag("UI").transform);
+        _useButtonPromptInstance.SetActive(false);
+
+        _repairButtonPromptInstance = Instantiate(repairButtonPrompt, GameObject.FindGameObjectWithTag("UI").transform);
+        _repairButtonPromptInstance.SetActive(false);
     }
 
     private void Start()
@@ -34,19 +40,25 @@ public class PlayerStationButtonPrompt : MonoBehaviour
         playerStation.OnActiveStationDeselected -= DisableButtonPrompt;
     }
 
-    private void DisableButtonPrompt(Station obj)
+    private void DisableButtonPrompt(Station station)
     {
-        _buttonPromptInstance.SetActive(false);
+        _useButtonPromptInstance.SetActive(false);
+        _repairButtonPromptInstance.SetActive(false);
     }
 
-    private void EnableButtonPrompt(Station obj)
+    private void EnableButtonPrompt(Station station)
     {
-        _buttonPromptInstance.SetActive(true);
+        if (station.IsBroken)
+            _repairButtonPromptInstance.SetActive(true);
+        else
+            _useButtonPromptInstance.SetActive(true);
     }
 
     private void Update()
     {
         Vector3 buttonPromptPosition = Camera.main.WorldToScreenPoint(buttonPromptLocation.position);
-        _buttonPromptInstance.transform.position = buttonPromptPosition;
+        
+        _useButtonPromptInstance.transform.position = buttonPromptPosition;
+        _repairButtonPromptInstance.transform.position = buttonPromptPosition;
     }
 }
