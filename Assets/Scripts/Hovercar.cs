@@ -10,6 +10,7 @@ public class Hovercar : MonoBehaviour
     public float forwardAccelleration = 100.0f;
     public float backwardAccelleration = 25.0f;
     public float turnStrength = 10.0f;
+    public LayerMask raycastFilter;
     public GameObject[] hoverPoints;
 
     private Rigidbody _rigidBody;
@@ -51,7 +52,7 @@ public class Hovercar : MonoBehaviour
         RaycastHit hit;
         foreach (GameObject point in hoverPoints)
         {
-            if (Physics.Raycast(point.transform.position, -Vector3.up, out hit, hoverHeight))
+            if (Physics.Raycast(point.transform.position, -Vector3.up, out hit, hoverHeight, raycastFilter))
             {
                 _rigidBody.AddForceAtPosition(Vector3.up * hoverForce * 
                     (1.0f - (hit.distance / hoverHeight)), point.transform.position);
@@ -86,6 +87,7 @@ public class Hovercar : MonoBehaviour
 
     public void Vroom(Vector3 move)
     {
+        Debug.Log(move);
         _move = move;
     }
 }
