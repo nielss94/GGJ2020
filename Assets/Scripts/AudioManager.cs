@@ -4,7 +4,9 @@ using System.Collections;
     public class AudioManager : MonoBehaviour
 {
     public AudioSource efxSource;                    //Drag a reference to the audio source which will play the sound effects.
-    public AudioSource[] musicSource;                    //Drag a reference to the audio source which will play the music.
+    public AudioSource musicSource;
+    public AudioClip[] songs;
+
     public static AudioManager instance = null;        //Allows other scripts to call functions from SoundManager.                
     public float lowPitchRange = .95f;                //The lowest a sound effect will be randomly pitched.
     public float highPitchRange = 1.05f;            //The highest a sound effect will be randomly pitched.
@@ -14,8 +16,11 @@ using System.Collections;
     {
         //Check if there is already an instance of SoundManager
         if (instance == null)
+        {
             //if not, set it to this.
             instance = this;
+            Setup();
+        }
         //If instance already exists:
         else if (instance != this)
             //Destroy this, this enforces our singleton pattern so there can only be one instance of SoundManager.
@@ -25,6 +30,10 @@ using System.Collections;
         DontDestroyOnLoad(gameObject);
     }
 
+    void Setup()
+    {
+        SwapSong(songs[songNumber]);
+    }
 
     //Used to play single sound clips.
     public void PlaySingle(AudioClip clip)
@@ -35,6 +44,14 @@ using System.Collections;
         //Play the clip.
         efxSource.Play();
     }
+
+    public void SwapSong(AudioClip clip)
+    {
+        musicSource.clip = clip;
+        musicSource.loop = true;
+        musicSource.Play();
+    }
+
 
 
     //RandomizeSfx chooses randomly between various audio clips and slightly changes their pitch.
@@ -58,10 +75,10 @@ using System.Collections;
 
     public void IncreaseDanger()
     {
-        if(songNumber < musicSource.Length)
+        if(songNumber < songs.Length -1)
         {
             songNumber++;
-            musicSource[songNumber].Play();
+            SwapSong(songs[songNumber]);
         }
     }
 
@@ -70,9 +87,21 @@ using System.Collections;
         if (songNumber > 0)
         {
             songNumber--;
-            musicSource[songNumber].Play();
+            SwapSong(songs[songNumber]);
         }
     }
 
+    void Update()
+    {
+        if (Input.GetKeyDown("space"))
+        {
+            IncreaseDanger();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            DecreaseDanger();
+        }
+    }
 
 }
