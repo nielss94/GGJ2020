@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2740552547946769355}
   - component: {fileID: 5133264961072203316}
   - component: {fileID: 105733212879731002}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wheelmetal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 7726524056178342046}
   - component: {fileID: 8145967508823764814}
   - component: {fileID: 146624159189095903}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TurretL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,7 +169,7 @@ GameObject:
   - component: {fileID: 4046355276853890277}
   - component: {fileID: 4771776058650024275}
   - component: {fileID: 7800654262142265933}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Box004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -249,7 +249,7 @@ GameObject:
   - component: {fileID: 3251113445458798934}
   - component: {fileID: 2935241444599460604}
   - component: {fileID: 5858623083238072170}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -343,7 +343,7 @@ GameObject:
   - component: {fileID: 6752876240806047517}
   - component: {fileID: 3898868425443708345}
   - component: {fileID: 6006592694362523493}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tire003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -436,7 +436,7 @@ GameObject:
   - component: {fileID: 3944567294349877152}
   - component: {fileID: 5761668183975378807}
   - component: {fileID: 1926070683305222842}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Exhaust
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -517,7 +517,7 @@ GameObject:
   - component: {fileID: 6582259386081808428}
   - component: {fileID: 4195908533258485376}
   - component: {fileID: 6008646950236239239}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Box003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -596,7 +596,7 @@ GameObject:
   - component: {fileID: 8155852095433198268}
   - component: {fileID: 2025004739507807094}
   - component: {fileID: 6011769459737106476}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cone001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -675,7 +675,7 @@ GameObject:
   - component: {fileID: 358857200509658632}
   - component: {fileID: 6844834659055119426}
   - component: {fileID: 1387572514985393027}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Railing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -754,7 +754,7 @@ GameObject:
   - component: {fileID: 1800945703622650930}
   - component: {fileID: 1800945703622650933}
   - component: {fileID: 1800945703622650932}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Reflection Probe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -769,7 +769,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1800945703622650935}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.00003361887, y: 1.5499985, z: 0.00010085679}
+  m_LocalPosition: {x: 0.000061035156, y: 1.5499992, z: 0.00012207031}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6738663078366016389}
@@ -1169,100 +1169,6 @@ MonoBehaviour:
   m_ObsoleteBlendNormalDistanceNegative: {x: 0, y: 0, z: 0}
   m_ObsoleteBoxSideFadePositive: {x: 1, y: 1, z: 1}
   m_ObsoleteBoxSideFadeNegative: {x: 1, y: 1, z: 1}
---- !u!1 &1848365853449879919
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 572855383345276861}
-  - component: {fileID: 3695779220974676065}
-  - component: {fileID: 5484555902427140729}
-  - component: {fileID: 685921820168939315}
-  m_Layer: 0
-  m_Name: Plane
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &572855383345276861
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1848365853449879919}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.31, y: 0.28, z: -1.51}
-  m_LocalScale: {x: 0.19586, y: 0.19586, z: 0.19586}
-  m_Children: []
-  m_Father: {fileID: 6738663078366016389}
-  m_RootOrder: 21
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &3695779220974676065
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1848365853449879919}
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &5484555902427140729
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1848365853449879919}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 73c176f402d2c2f4d929aa5da7585d17, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!64 &685921820168939315
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1848365853449879919}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &2494782971425335436
 GameObject:
   m_ObjectHideFlags: 0
@@ -1272,7 +1178,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7334410082246137377}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wheels002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1306,7 +1212,7 @@ GameObject:
   - component: {fileID: 2725731673354464438}
   - component: {fileID: 1530713822751814490}
   - component: {fileID: 1724925262701787817}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TurretR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1383,7 +1289,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 718829938034223154}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wheels003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1397,7 +1303,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3794381348436746235}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: -0.70710677, y: 0, z: -0, w: 0.70710677}
   m_LocalPosition: {x: -4.87, y: -1.5667634, z: -3.862253}
   m_LocalScale: {x: 65.45888, y: 100, z: 100}
   m_Children:
@@ -1415,7 +1321,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 442542724834820176}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wheels001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1449,7 +1355,7 @@ GameObject:
   - component: {fileID: 7675249882694582271}
   - component: {fileID: 672462064634068228}
   - component: {fileID: 2247340241049184706}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Stairs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1528,7 +1434,7 @@ GameObject:
   - component: {fileID: 1249772656878888196}
   - component: {fileID: 6355117343910952253}
   - component: {fileID: 3778674794930608320}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CirclesawPointy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1607,7 +1513,7 @@ GameObject:
   - component: {fileID: 3806514890863880619}
   - component: {fileID: 3700753400591481258}
   - component: {fileID: 797831649544683702}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CirclesawCenter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1687,7 +1593,7 @@ GameObject:
   - component: {fileID: 2009298597907073725}
   - component: {fileID: 5543505917576030280}
   - component: {fileID: 2127708977372062590}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tire001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1780,7 +1686,7 @@ GameObject:
   - component: {fileID: 4917432435364706154}
   - component: {fileID: 4917432435364706152}
   - component: {fileID: 4917432435364706153}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DustParticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6534,7 +6440,7 @@ GameObject:
   - component: {fileID: 4917432435403573855}
   - component: {fileID: 4917432435403573853}
   - component: {fileID: 4917432435403573854}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DustParticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11288,7 +11194,7 @@ GameObject:
   - component: {fileID: 4917432435480759597}
   - component: {fileID: 4917432435480759571}
   - component: {fileID: 4917432435480759596}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ExhaustParticleL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11303,7 +11209,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4917432435480759598}
   m_LocalRotation: {x: 0.7071062, y: -0.00000007639116, z: 0.00000007639116, w: 0.7071075}
-  m_LocalPosition: {x: 0.0216, y: -0.0754, z: 0.0019}
+  m_LocalPosition: {x: 0.0216, y: -0.0754, z: 0.0053}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3944567294349877152}
@@ -11382,7 +11288,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 1
+  moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0
@@ -11392,8 +11298,8 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 1
-      minScalar: 2
+      scalar: 0.5
+      minScalar: 0.1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -11561,8 +11467,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 30
-      minScalar: 20
+      scalar: 20
+      minScalar: 15
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -12023,7 +11929,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.4
+      value: 0.0001
       mode: 0
       spread: 0
       speed:
@@ -12142,7 +12048,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 200
+      scalar: 500
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -12268,12 +12174,12 @@ ParticleSystem:
           outWeight: 0.33333334
         - serializedVersion: 3
           time: 1
-          value: 0.52702713
-          inSlope: 1
-          outSlope: 1
+          value: 0.27027044
+          inSlope: 0.51291466
+          outSlope: 0.51291466
           tangentMode: 0
           weightedMode: 0
-          inWeight: 0.33333334
+          inWeight: 0.105386436
           outWeight: 0.33333334
         m_PreInfinity: 2
         m_PostInfinity: 2
@@ -12580,33 +12486,33 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.05660379, g: 0.05660379, b: 0.05660379, a: 0}
-        key1: {r: 0.05660379, g: 0.05660379, b: 0.05660379, a: 1}
-        key2: {r: 0, g: 0, b: 0, a: 1}
+        key0: {r: 0, g: 1, b: 0.90622044, a: 0}
+        key1: {r: 1, g: 0.6135602, b: 0, a: 0.38039216}
+        key2: {r: 0.05660379, g: 0.05660379, b: 0.05660379, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
         ctime0: 0
-        ctime1: 65535
-        ctime2: 0
+        ctime1: 4241
+        ctime2: 65535
         ctime3: 0
         ctime4: 0
         ctime5: 0
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 4915
-        atime2: 32768
+        atime1: 4241
+        atime2: 41827
         atime3: 65535
         atime4: 0
         atime5: 0
         atime6: 0
         atime7: 0
         m_Mode: 0
-        m_NumColorKeys: 2
-        m_NumAlphaKeys: 4
+        m_NumColorKeys: 3
+        m_NumAlphaKeys: 3
       minGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -12818,8 +12724,8 @@ ParticleSystem:
     y:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 20
-      minScalar: 10
+      scalar: 7
+      minScalar: 3
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -15039,9 +14945,9 @@ ParticleSystem:
       properties: 0
       emitProbability: 1
   LightsModule:
-    enabled: 0
-    ratio: 0
-    light: {fileID: 0}
+    enabled: 1
+    ratio: 0.2
+    light: {fileID: 1157759950635743354, guid: def503fd0bbfbb849bb0bf14b51aaee4, type: 3}
     randomDistribution: 1
     color: 1
     range: 1
@@ -15152,7 +15058,7 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    maxLights: 20
+    maxLights: 5
   TrailModule:
     enabled: 0
     mode: 0
@@ -16042,7 +15948,7 @@ GameObject:
   - component: {fileID: 4917432436093684642}
   - component: {fileID: 4917432436093684640}
   - component: {fileID: 4917432436093684641}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DustParticle (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20796,7 +20702,7 @@ GameObject:
   - component: {fileID: 4917432437045213999}
   - component: {fileID: 4917432437045213997}
   - component: {fileID: 4917432437045213998}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DustParticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25555,7 +25461,7 @@ GameObject:
   - component: {fileID: 1071572787999889585}
   - component: {fileID: 1071572787999889586}
   - component: {fileID: 1071572787999889612}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BodyGreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25705,7 +25611,7 @@ GameObject:
   - component: {fileID: 7452518899163347476}
   - component: {fileID: 8382644851259148335}
   - component: {fileID: 853529984886119442}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wheelmetal003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25784,7 +25690,7 @@ GameObject:
   - component: {fileID: 4321545338853164934}
   - component: {fileID: 8801645516410391008}
   - component: {fileID: 6255867049499234155}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TurretGlow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25864,7 +25770,7 @@ GameObject:
   - component: {fileID: 7148352408996735572}
   - component: {fileID: 2757392122195930689}
   - component: {fileID: 805343182112012789}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tire002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25957,7 +25863,7 @@ GameObject:
   - component: {fileID: 3885057103952192026}
   - component: {fileID: 5288204705123801808}
   - component: {fileID: 1706455550791830769}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GlowSteer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26036,7 +25942,7 @@ GameObject:
   - component: {fileID: 467334506308508154}
   - component: {fileID: 259653745762580437}
   - component: {fileID: 5041147052558163699}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wheelmetal001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26113,7 +26019,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6738663078366016389}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Beast
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26129,7 +26035,7 @@ Transform:
   m_GameObject: {fileID: 7773164050193383830}
   m_LocalRotation: {x: 0, y: -1, z: 0, w: 0.00000028088027}
   m_LocalPosition: {x: 805.54, y: 40.77, z: 555.17}
-  m_LocalScale: {x: 1.8155, y: 1.8155, z: 1.8155}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3564871915954461336}
   - {fileID: 6582259386081808428}
@@ -26152,7 +26058,6 @@ Transform:
   - {fileID: 7334410082246137377}
   - {fileID: 718829938034223154}
   - {fileID: 1800945703622650930}
-  - {fileID: 572855383345276861}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -179.99998, z: 0}
@@ -26167,7 +26072,7 @@ GameObject:
   - component: {fileID: 5774693806385338184}
   - component: {fileID: 1070852390412991075}
   - component: {fileID: 2137333263308368210}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Steeringwheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26244,7 +26149,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3744645163192236355}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wheels
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26278,7 +26183,7 @@ GameObject:
   - component: {fileID: 236895346405320068}
   - component: {fileID: 2776967114684862682}
   - component: {fileID: 1421541649478636984}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: HoldingBars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26357,7 +26262,7 @@ GameObject:
   - component: {fileID: 5474055933788780222}
   - component: {fileID: 5624918076310967400}
   - component: {fileID: 2774355704252473158}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wheelmetal002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26436,7 +26341,7 @@ GameObject:
   - component: {fileID: 8259114169746330877}
   - component: {fileID: 5441930477319029192}
   - component: {fileID: 4146223784170106029}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ExhaustParticleR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26451,7 +26356,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8429648516114509789}
   m_LocalRotation: {x: 0.7071062, y: -0.00000007639116, z: 0.00000007639116, w: 0.7071075}
-  m_LocalPosition: {x: -0.0208, y: -0.0754, z: 0.0019}
+  m_LocalPosition: {x: -0.0208, y: -0.0754, z: 0.0053}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3944567294349877152}
@@ -26530,7 +26435,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 1
+  moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0
@@ -26540,8 +26445,8 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 1
-      minScalar: 2
+      scalar: 0.5
+      minScalar: 0.1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -26709,8 +26614,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 30
-      minScalar: 20
+      scalar: 20
+      minScalar: 15
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -27171,7 +27076,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.4
+      value: 0.0001
       mode: 0
       spread: 0
       speed:
@@ -27290,7 +27195,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 200
+      scalar: 500
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -27416,12 +27321,12 @@ ParticleSystem:
           outWeight: 0.33333334
         - serializedVersion: 3
           time: 1
-          value: 0.52702713
-          inSlope: 1
-          outSlope: 1
+          value: 0.27027044
+          inSlope: 0.51291466
+          outSlope: 0.51291466
           tangentMode: 0
           weightedMode: 0
-          inWeight: 0.33333334
+          inWeight: 0.105386436
           outWeight: 0.33333334
         m_PreInfinity: 2
         m_PostInfinity: 2
@@ -27728,33 +27633,33 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.05660379, g: 0.05660379, b: 0.05660379, a: 0}
-        key1: {r: 0.05660379, g: 0.05660379, b: 0.05660379, a: 1}
-        key2: {r: 0, g: 0, b: 0, a: 1}
+        key0: {r: 0, g: 1, b: 0.90622044, a: 0}
+        key1: {r: 1, g: 0.6135602, b: 0, a: 0.38039216}
+        key2: {r: 0.05660379, g: 0.05660379, b: 0.05660379, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
         ctime0: 0
-        ctime1: 65535
-        ctime2: 0
+        ctime1: 4241
+        ctime2: 65535
         ctime3: 0
         ctime4: 0
         ctime5: 0
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 4915
-        atime2: 32768
+        atime1: 4241
+        atime2: 41827
         atime3: 65535
         atime4: 0
         atime5: 0
         atime6: 0
         atime7: 0
         m_Mode: 0
-        m_NumColorKeys: 2
-        m_NumAlphaKeys: 4
+        m_NumColorKeys: 3
+        m_NumAlphaKeys: 3
       minGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -27966,8 +27871,8 @@ ParticleSystem:
     y:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 20
-      minScalar: 10
+      scalar: 7
+      minScalar: 3
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -30187,9 +30092,9 @@ ParticleSystem:
       properties: 0
       emitProbability: 1
   LightsModule:
-    enabled: 0
-    ratio: 0
-    light: {fileID: 0}
+    enabled: 1
+    ratio: 0.2
+    light: {fileID: 1157759950635743354, guid: def503fd0bbfbb849bb0bf14b51aaee4, type: 3}
     randomDistribution: 1
     color: 1
     range: 1
@@ -30300,7 +30205,7 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    maxLights: 20
+    maxLights: 5
   TrailModule:
     enabled: 0
     mode: 0
@@ -31190,7 +31095,7 @@ GameObject:
   - component: {fileID: 1556985411516751209}
   - component: {fileID: 4861123534122423823}
   - component: {fileID: 4004766275292141531}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FuelGlow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31269,6 +31174,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Furnace
+      objectReference: {fileID: 0}
+    - target: {fileID: 5989209504418740677, guid: 35da96b88343ceb4cae1ac5d91a0d1d6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5989209504418740677, guid: 35da96b88343ceb4cae1ac5d91a0d1d6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8179124580617246121, guid: 35da96b88343ceb4cae1ac5d91a0d1d6,
         type: 3}
