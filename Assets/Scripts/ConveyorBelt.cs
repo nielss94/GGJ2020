@@ -45,4 +45,11 @@ public class ConveyorBelt : MonoBehaviour
         
         _partsOnBelt.Add(new ConveyorBeltPart(newDollycart, newPart));
     }
+
+    public void RemoveFromBelt(GameObject part)
+    {
+        ConveyorBeltPart cbp = _partsOnBelt.First(c => c.Part == part);
+
+        _partsOnBelt.Remove(cbp);
+    }
 }

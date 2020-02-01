@@ -326,7 +326,7 @@ MeshCollider:
   m_GameObject: {fileID: 976725363742445070}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 1
   m_CookingOptions: 30
@@ -420,7 +420,7 @@ MeshCollider:
   m_GameObject: {fileID: 1124686146003785219}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 1
   m_CookingOptions: 30
@@ -769,7 +769,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1800945703622650935}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.000006582612, y: 1.5499979, z: -0.000011096872}
+  m_LocalPosition: {x: 0.000033618926, y: 1.5499985, z: 0.00010085678}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6738663078366016389}
@@ -1670,7 +1670,7 @@ MeshCollider:
   m_GameObject: {fileID: 4703763686817231386}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 1
   m_CookingOptions: 30
@@ -25460,7 +25460,6 @@ GameObject:
   - component: {fileID: 1071572787999889584}
   - component: {fileID: 1071572787999889585}
   - component: {fileID: 1071572787999889586}
-  - component: {fileID: 1071572787999889587}
   - component: {fileID: 1071572787999889612}
   m_Layer: 0
   m_Name: BodyGreen
@@ -25544,7 +25543,7 @@ BoxCollider:
   m_GameObject: {fileID: 5917441741849479592}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.00250908, y: 0.11990052, z: 0.0108187115}
   m_Center: {x: 0.03624545, y: -0.000049761256, z: 0.004379977}
@@ -25557,7 +25556,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 5917441741849479592}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.013807961
   m_Height: 0.092037514
   m_Direction: 0
@@ -25571,7 +25570,7 @@ BoxCollider:
   m_GameObject: {fileID: 5917441741849479592}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.075, y: 0.0216674, z: 0.0015270328}
   m_Center: {x: 0, y: 0.049046632, z: 0.004331004}
@@ -25584,24 +25583,10 @@ BoxCollider:
   m_GameObject: {fileID: 5917441741849479592}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.023841867, y: 0.044994883, z: 0.0015270328}
   m_Center: {x: 0.0000026895138, y: 0.05129507, z: 0.004331004}
---- !u!114 &1071572787999889587
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5917441741849479592}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8261e6f2e5fac44da64da2b23939e9a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  colorDefault: {r: 0.8, g: 0.8, b: 0.8, a: 1}
-  colorSelected: {r: 0.25, g: 0.65, b: 0.8, a: 1}
 --- !u!65 &1071572787999889612
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25611,7 +25596,7 @@ BoxCollider:
   m_GameObject: {fileID: 5917441741849479592}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.00250908, y: 0.11990052, z: 0.0108187115}
   m_Center: {x: -0.03624545, y: -0.000049761256, z: 0.004379977}
@@ -25862,7 +25847,7 @@ MeshCollider:
   m_GameObject: {fileID: 6335759245017163923}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 1
   m_CookingOptions: 30
@@ -26048,7 +26033,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7773164050193383830}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: -1, z: 0, w: 0.00000028088027}
   m_LocalPosition: {x: 805.54, y: 40.77, z: 555.17}
   m_LocalScale: {x: 1.8155, y: 1.8155, z: 1.8155}
   m_Children:
@@ -26075,7 +26060,7 @@ Transform:
   - {fileID: 1800945703622650930}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -179.99998, z: 0}
 --- !u!1 &7822287479633179410
 GameObject:
   m_ObjectHideFlags: 0
