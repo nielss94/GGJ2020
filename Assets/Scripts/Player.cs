@@ -16,6 +16,8 @@ public class Player : MonoBehaviour
     private PlayerStation _playerStation = null;
     private Rigidbody _rigidbody = null;
     private Vector3 _move = default;
+    public Vector3 MoveInput => _move;
+    
     private Transform _playerSpawn = null;
     private bool _isDead = false;
     private CenterToHovercar _centerToHovercar;
@@ -48,18 +50,19 @@ public class Player : MonoBehaviour
     private void Update()
     {
         _rigidbody.isKinematic = _isOnPlatform;
+
+        if (_canMove)
+        {
+            var nextPos = _rigidbody.position + transform.TransformDirection(_move * (moveSpeed * Time.deltaTime));
+            _rigidbody.MovePosition(nextPos);
+        }
     }
 
     private void FixedUpdate()
     {
-        if (_canMove)
-        {
-            var nextPos = _rigidbody.position + transform.TransformDirection(_move * (moveSpeed * Time.fixedDeltaTime));
-            _rigidbody.MovePosition(nextPos);
-        }
         
-        _isOnPlatform = Physics.SphereCast(floorDetection.position, .05f, Vector3.down, out var hit, .65f,
-            LayerMask.GetMask("Platform"));
+        // _isOnPlatform = Physics.SphereCast(floorDetection.position, .05f, Vector3.down, out var hit, .65f,
+        //     LayerMask.GetMask("Platform"));
     }
 
     
