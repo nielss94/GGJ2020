@@ -15,6 +15,9 @@ public abstract class Station : MonoBehaviour
     [SerializeField]
     private float repairTimer = 3f;
 
+    [SerializeField]
+    private ParticleSystem brokenParticles = null;
+
     private bool _isActive = false;
     public bool IsActive => _isActive;
 
@@ -23,6 +26,11 @@ public abstract class Station : MonoBehaviour
 
     private float _timeLeftForRepairing;
     private bool _startedRepair;
+
+    protected void Start()
+    {
+        brokenParticles.Stop();
+    }
 
     protected void Awake()
     {
@@ -44,6 +52,11 @@ public abstract class Station : MonoBehaviour
                 Repair();
                 OnIsRepaired.Invoke(this);
             }
+        }
+
+        if (!brokenParticles.isPlaying && _isBroken)
+        {
+            brokenParticles.Play();
         }
     }
 
@@ -75,6 +88,7 @@ public abstract class Station : MonoBehaviour
     public void Repair()
     {
         _isBroken = false;
+        brokenParticles.Stop();
     }
 
     public void StartRepair()
