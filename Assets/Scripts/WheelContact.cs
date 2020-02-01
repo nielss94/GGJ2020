@@ -20,8 +20,9 @@ public class WheelContact : MonoBehaviour
     {
         wheelMesh.transform.position = _initialWheelPosition;
 
-        if (Physics.Raycast(transform.position, -transform.up, out RaycastHit hit, maxExtension * 5))
+        if (Physics.Raycast(transform.position, -transform.up, out RaycastHit hit, maxExtension + wheelRadius))
         {
+            Debug.Log("HIT!");
             _currentExtension = hit.distance - wheelRadius;
         }
         else
