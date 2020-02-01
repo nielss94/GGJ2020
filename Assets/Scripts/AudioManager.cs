@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-    public class AudioManager : MonoBehaviour
+public class AudioManager : MonoBehaviour
 {
     public AudioSource efxSource;                    //Drag a reference to the audio source which will play the sound effects.
     public AudioSource musicSource;
     public AudioClip[] songs;
+    public AudioClip[] engineSounds;
 
     public static AudioManager instance = null;        //Allows other scripts to call functions from SoundManager.                
     public float lowPitchRange = .95f;                //The lowest a sound effect will be randomly pitched.
@@ -32,7 +33,7 @@ using System.Collections;
 
     void Setup()
     {
-        SwapSong(songs[songNumber]);
+     //   SwapSong(songs[songNumber]);
     }
 
     //Used to play single sound clips.
@@ -41,6 +42,15 @@ using System.Collections;
         //Set the clip of our efxSource audio source to the clip passed in as a parameter.
         efxSource.clip = clip;
 
+        //Play the clip.
+        efxSource.Play();
+    }
+
+    public void PlayLoop(AudioClip clip)
+    {
+        //Set the clip of our efxSource audio source to the clip passed in as a parameter.
+        efxSource.clip = clip;
+        efxSource.loop = true;
         //Play the clip.
         efxSource.Play();
     }
@@ -75,7 +85,7 @@ using System.Collections;
 
     public void IncreaseDanger()
     {
-        if(songNumber < songs.Length -1)
+        if (songNumber < songs.Length - 1)
         {
             songNumber++;
             SwapSong(songs[songNumber]);
@@ -102,6 +112,12 @@ using System.Collections;
         {
             DecreaseDanger();
         }
+    }
+
+    public void PlayEngineSounds(int index)
+    {
+        PlayLoop(engineSounds[index]);
+
     }
 
 }
