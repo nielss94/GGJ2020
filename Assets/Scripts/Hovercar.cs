@@ -57,19 +57,19 @@ public class Hovercar : MonoBehaviour
                 _rigidBody.AddForceAtPosition(Vector3.up * hoverForce * 
                     (1.0f - (hit.distance / hoverHeight)), point.transform.position);
             }
-            // else
-            // {
-            //     if (transform.position.y > point.transform.position.y)
-            //     {
-            //         _rigidBody.AddForceAtPosition(point.transform.up * hoverForce, 
-            //             point.transform.position);
-            //     }
-            //     else
-            //     {
-            //         _rigidBody.AddForceAtPosition(point.transform.up * -hoverForce,
-            //             point.transform.position);
-            //     }
-            // }
+            else
+            {
+                if (transform.position.y > point.transform.position.y)
+                {
+                    _rigidBody.AddForceAtPosition(point.transform.up * 0.5f * hoverForce, 
+                        point.transform.position);
+                }
+                else
+                {
+                    _rigidBody.AddForceAtPosition(point.transform.up * 0.5f * -hoverForce,
+                        point.transform.position);
+                }
+            }
         }
 
         // Thrust
@@ -87,7 +87,6 @@ public class Hovercar : MonoBehaviour
 
     public void Vroom(Vector3 move)
     {
-        Debug.Log(move);
         _move = move;
     }
 }
