@@ -207,7 +207,6 @@ GameObject:
   - component: {fileID: 8723088381089024604}
   - component: {fileID: 3976900880063258057}
   - component: {fileID: 2543757375371427724}
-  - component: {fileID: 7290163458507519056}
   m_Layer: 5
   m_Name: PressButtonToJoin
   m_TagString: Untagged
@@ -255,20 +254,6 @@ CanvasGroup:
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
---- !u!114 &7290163458507519056
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5976777500274567762}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f14adff1b2c5a1f42b42876c718b0166, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fadeOutTimer: 0.75
-  blinkTime: 0.3
 --- !u!1 &6405480503278717288
 GameObject:
   m_ObjectHideFlags: 0
