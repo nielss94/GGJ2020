@@ -31,7 +31,7 @@ public class PlayerStation : MonoBehaviour
         }
         else
         {
-            SetPossibleStation(_activeStation);
+            SetPossibleStation(_activeStation, true);
             RemoveCurrentActiveStation();
         }
     }
@@ -72,9 +72,9 @@ public class PlayerStation : MonoBehaviour
         DebugGUI.LogPersistent("Active station", $"Active station: {stationName}");
     }
 
-    public void SetPossibleStation(Station station)
+    public void SetPossibleStation(Station station, bool ignoreActivation = false)
     {
-        if(station.IsActive) return;
+        if(!ignoreActivation && station.IsActive) return;
         
         DebugLogPossibleStation(station.name);
         _hasPossibleStation = true;
