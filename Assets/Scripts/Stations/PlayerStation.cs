@@ -12,6 +12,8 @@ public class PlayerStation : MonoBehaviour
 
     public event Action<Station> OnPossibleStationDeselected = delegate(Station station) { };
     public event Action<Station> OnActiveStationDeselected = delegate(Station station) { };
+    
+    public event Action<Station> OnNotTheRightMaterial = delegate(Station station) {  };
 
     private Station _possibleStation;
     private Station _activeStation;
@@ -62,7 +64,7 @@ public class PlayerStation : MonoBehaviour
                     _activeStation.OnIsRepaired -= SetStationAsPossibleWhenRepaired;
                     _isRepairing = false;
                 }
-                
+
                 SetPossibleStation(_activeStation);
                 RemoveCurrentActiveStation();
             }
@@ -77,14 +79,24 @@ public class PlayerStation : MonoBehaviour
         _hasActiveStation = true;
         _activeStation = station;
         OnActiveStationSelected.Invoke(station);
-        
+
         _activeStation.Initialize();
-        
+
         if (_activeStation.IsBroken)
         {
-            _isRepairing = true;
-            _activeStation.StartRepair();
-            _activeStation.OnIsRepaired += SetStationAsPossibleWhenRepaired;
+            //TODO: If right item is collected
+            if (false)
+            {
+                _isRepairing = true;
+                _activeStation.StartRepair();
+                _activeStation.OnIsRepaired += SetStationAsPossibleWhenRepaired;
+            }
+            else
+            {
+                OnNotTheRightMaterial.Invoke(_activeStation);
+                SetPossibleStation(_activeStation);
+                RemoveCurrentActiveStation();
+            }
         }
     }
 
