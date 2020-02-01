@@ -58,9 +58,10 @@ public class Player : MonoBehaviour
             _rigidbody.MovePosition(nextPos);
         }
         
-        _isOnPlatform = Physics.SphereCast(floorDetection.position, .05f, Vector3.down, out var hit, 1,
+        _isOnPlatform = Physics.SphereCast(floorDetection.position, .05f, Vector3.down, out var hit, .65f,
             LayerMask.GetMask("Platform"));
     }
+
     
     public void OnMove(InputValue value)
     {
