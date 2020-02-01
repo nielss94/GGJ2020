@@ -5,16 +5,17 @@ using UnityEngine.InputSystem;
 
 public class Hovercar : MonoBehaviour
 {
-    public float baseThrust;
-    public float speedLimit;
     public float hoverForce = 9.0f;
     public float hoverHeight = 2.0f;
+    public float forwardAccelleration = 100.0f;
+    public float backwardAccelleration = 25.0f;
     public float turnStrength = 10.0f;
     public LayerMask raycastFilter;
     public GameObject[] hoverPoints;
 
     private Rigidbody _rigidBody;
     private float _deadZone = 0.1f;
+    private float _currentThrust = 0.0f;
     private float _currentTurnRate = 0.0f;
 
     private Vector3 _move;
@@ -30,8 +31,32 @@ public class Hovercar : MonoBehaviour
 
     private void Update()
     {
-        // Steering
-        _currentTurnRate = 0.0f;
+        // Thrust
+        _currentThrust = 0.0f;
+        if (_move.z > _deadZone)
+        {
+            _currentThrust = _move.z * forwardAccelleration;
+        }
+        else if (_move.z < -_deadZone)
+        {
+            _currentThrust = _move.z * backwardAccelleration;
+        }
+
+        if (_currentThrust != 0.0f && !motorStarted)
+        {
+            motorStarted = true;
+            AudioManager.instance.PlayEngineSounds(1);
+        }
+
+        if (_currentThrust == 0.0f && motorStarted)
+        {
+            motorStarted = false;
+            AudioManager.instance.PlayEngineSounds(0);
+        }
+
+
+       // Steering
+       _currentTurnRate = 0.0f;
         if (Mathf.Abs(_move.x) > _deadZone)
         {
             _currentTurnRate = _move.x;
@@ -65,9 +90,9 @@ public class Hovercar : MonoBehaviour
         }
 
         // Thrust
-        if (_rigidBody.velocity.sqrMagnitude <= speedLimit)
+        if (Mathf.Abs(_currentThrust) > 0)
         {
-            _rigidBody.AddForce(transform.forward * baseThrust);
+            _rigidBody.AddForce(transform.forward * _currentThrust);
         }
 
         // Turn
