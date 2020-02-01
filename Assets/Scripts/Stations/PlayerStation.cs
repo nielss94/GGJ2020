@@ -19,48 +19,65 @@ public class PlayerStation : MonoBehaviour
     private bool _hasPossibleStation;
     private bool _hasActiveStation;
 
+    private bool _canChooseStations = false;
+
+    private void Awake()
+    {
+        GameManager.OnGameStarted += EnableStationChoosing;
+    }
+
+    private void EnableStationChoosing()
+    {
+        _canChooseStations = true;
+    }
 
     public void OnUse()
     {
-        if (!_hasActiveStation)
+        if (_canChooseStations)
         {
-            if (!_hasPossibleStation) return;
-            
-            SetCurrentActiveStation(_possibleStation);
-            RemovePossibleStation();
-        }
-        else
-        {
-            SetPossibleStation(_activeStation, true);
-            RemoveCurrentActiveStation();
+            if (!_hasActiveStation)
+            {
+                if (!_hasPossibleStation) return;
+
+                SetCurrentActiveStation(_possibleStation);
+                RemovePossibleStation();
+            }
+            else
+            {
+                SetPossibleStation(_activeStation, true);
+                RemoveCurrentActiveStation();
+            }
         }
     }
 
     public void OnUseRelease()
     {
-        if (_hasActiveStation && _activeStation.GetIsHoldInteraction())
+        if (_canChooseStations)
         {
-            SetPossibleStation(_activeStation);
-            RemoveCurrentActiveStation();
+            if (_hasActiveStation && _activeStation.GetIsHoldInteraction())
+            {
+                SetPossibleStation(_activeStation);
+                RemoveCurrentActiveStation();
+            }
         }
     }
 
     private void SetCurrentActiveStation(Station station)
     {
-        if(station.IsActive) return;
-        
+        if (station.IsActive) return;
+
         DebugLogActiveStation(station.name);
         _hasActiveStation = true;
         _activeStation = station;
         OnActiveStationSelected.Invoke(station);
-        
+
         _activeStation.Initialize();
     }
 
     private void RemoveCurrentActiveStation()
     {
         _activeStation.Terminate();
-        
+
         DebugLogActiveStation("none");
         _hasActiveStation = false;
         _activeStation = null;
@@ -74,8 +91,8 @@ public class PlayerStation : MonoBehaviour
 
     public void SetPossibleStation(Station station, bool ignoreActivation = false)
     {
-        if(!ignoreActivation && station.IsActive) return;
-        
+        if (!ignoreActivation && station.IsActive) return;
+
         DebugLogPossibleStation(station.name);
         _hasPossibleStation = true;
         _possibleStation = station;
@@ -97,10 +114,9 @@ public class PlayerStation : MonoBehaviour
             _activeStation.ProcessInput(value);
         }
     }
-    
+
     private void DebugLogPossibleStation(string stationName)
     {
         DebugGUI.LogPersistent("Possible station", $"Possible station: {stationName}");
     }
-    
 }

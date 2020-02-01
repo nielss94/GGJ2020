@@ -15,7 +15,7 @@ public class PlayerStationButtonPrompt : MonoBehaviour
     private PlayerStation playerStation = null;
     
     private GameObject _buttonPromptInstance = null;
-    
+
     private void Awake()
     {
         _buttonPromptInstance = Instantiate(buttonPrompt, GameObject.FindGameObjectWithTag("UI").transform);
