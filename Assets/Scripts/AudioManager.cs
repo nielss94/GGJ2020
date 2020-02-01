@@ -33,7 +33,7 @@ public class AudioManager : MonoBehaviour
 
     void Setup()
     {
-        SwapSong(songs[songNumber]);
+     //   SwapSong(songs[songNumber]);
     }
 
     //Used to play single sound clips.
@@ -42,6 +42,15 @@ public class AudioManager : MonoBehaviour
         //Set the clip of our efxSource audio source to the clip passed in as a parameter.
         efxSource.clip = clip;
 
+        //Play the clip.
+        efxSource.Play();
+    }
+
+    public void PlayLoop(AudioClip clip)
+    {
+        //Set the clip of our efxSource audio source to the clip passed in as a parameter.
+        efxSource.clip = clip;
+        efxSource.loop = true;
         //Play the clip.
         efxSource.Play();
     }
@@ -107,7 +116,7 @@ public class AudioManager : MonoBehaviour
 
     public void PlayEngineSounds(int index)
     {
-        PlaySingle(engineSounds[index]);
+        PlayLoop(engineSounds[index]);
 
     }
 
