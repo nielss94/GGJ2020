@@ -12,7 +12,9 @@ public class SteeringWheel : Station
     
     private void Update()
     {
-        if (IsActive)
+        base.Update();
+        
+        if (IsActive && !IsBroken)
         {
             _hovercar.Vroom(_move);
         }
