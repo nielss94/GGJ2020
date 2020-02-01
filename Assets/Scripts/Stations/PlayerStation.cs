@@ -21,7 +21,7 @@ public class PlayerStation : MonoBehaviour
 
     private bool _canChooseStations = false;
 
-    private void Start()
+    private void Awake()
     {
         GameManager.OnGameStarted += EnableStationChoosing;
     }
