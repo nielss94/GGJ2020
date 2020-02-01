@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public static event Action OnGameStarted = delegate {  };
     
     private PlayerInputManager _playerInputManager;
+    private PlayerJoinedUI _playerJoinedUi;
     private int _playersJoined = 0;
 
     private bool _gameStarted = false;
@@ -16,11 +17,13 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        _playerJoinedUi = GetComponent<PlayerJoinedUI>();
         _playerInputManager = GetComponent<PlayerInputManager>();
     }
 
     private void OnPlayerJoined()
     {
+        _playerJoinedUi.SetPlayerActive(_playersJoined);
         _playersJoined++;
 
         if (_playersJoined == _playerInputManager.maxPlayerCount)
