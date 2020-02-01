@@ -24,11 +24,41 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 154586615354125414}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.5, z: 0}
+  m_LocalPosition: {x: 0, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6373127167119177070}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4682428035218826894
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7490727125319701520}
+  m_Layer: 0
+  m_Name: NeedMaterialPromptLocation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7490727125319701520
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4682428035218826894}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6373127167119177070}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6373127167119177061
 GameObject:
@@ -66,6 +96,7 @@ Transform:
   m_Children:
   - {fileID: 4799984100004552258}
   - {fileID: 482273055148447598}
+  - {fileID: 7490727125319701520}
   - {fileID: 5395902846080824529}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -179,9 +210,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonPromptLocation: {fileID: 482273055148447598}
-  buttonPrompt: {fileID: 3740637801893413942, guid: fd0a2e7a92d30124d9cf5d92d498fdca,
+  useButtonPrompt: {fileID: 3740637801893413942, guid: fd0a2e7a92d30124d9cf5d92d498fdca,
+    type: 3}
+  repairButtonPrompt: {fileID: 3740637801893413942, guid: 94d8582c02c2c1d4b9806ecc6db67405,
     type: 3}
   playerStation: {fileID: 5329380375229139207}
+  materialPromptLocation: {fileID: 7490727125319701520}
+  needMaterialsPrompt: {fileID: 3740637801893413942, guid: cceb9b0141900fb4095afddd6a2b031f,
+    type: 3}
 --- !u!114 &3958668103846578083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -286,7 +322,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: d0c50f201d5a43240881893d37bfa648,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: d0c50f201d5a43240881893d37bfa648,
         type: 3}
