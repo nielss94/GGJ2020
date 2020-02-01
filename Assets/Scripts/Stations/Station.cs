@@ -11,7 +11,7 @@ public abstract class Station : MonoBehaviour
 
     protected bool isActive = false;
     public bool IsActive => isActive;
-    
+
     public bool GetIsHoldInteraction()
     {
         return isHoldInteraction;
