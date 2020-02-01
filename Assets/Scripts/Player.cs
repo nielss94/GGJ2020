@@ -49,18 +49,18 @@ public class Player : MonoBehaviour
     
     private void Update()
     {
-        _rigidbody.isKinematic = _isOnPlatform;
+        //_rigidbody.isKinematic = _isOnPlatform;
 
-        if (_canMove)
-        {
-            var nextPos = _rigidbody.position + transform.TransformDirection(_move * (moveSpeed * Time.deltaTime));
-            _rigidbody.MovePosition(nextPos);
-        }
+        
     }
 
     private void FixedUpdate()
     {
-        
+        if (_canMove)
+        {
+            Vector3 nextPos = _rigidbody.position + transform.TransformDirection(_move * (moveSpeed * Time.deltaTime));
+            _rigidbody.MovePosition(nextPos);
+        }
         // _isOnPlatform = Physics.SphereCast(floorDetection.position, .05f, Vector3.down, out var hit, .65f,
         //     LayerMask.GetMask("Platform"));
     }
