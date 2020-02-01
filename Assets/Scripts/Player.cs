@@ -11,11 +11,15 @@ public class Player : MonoBehaviour
     [SerializeField] private float respawnTime = 3f;
     
     private bool _canMove = true;
+    public bool CanMove => _canMove;
+
     private bool _isOnPlatform = false;
     
     private PlayerStation _playerStation = null;
     private Rigidbody _rigidbody = null;
     private Vector3 _move = default;
+    public Vector3 MoveInput => _move;
+    
     private Transform _playerSpawn = null;
     private bool _isDead = false;
     private CenterToHovercar _centerToHovercar;
@@ -54,7 +58,7 @@ public class Player : MonoBehaviour
     {
         if (_canMove)
         {
-            var nextPos = _rigidbody.position + transform.TransformDirection(_move * (moveSpeed * Time.fixedDeltaTime));
+            Vector3 nextPos = _rigidbody.position + transform.TransformDirection(_move * (moveSpeed * Time.deltaTime));
             _rigidbody.MovePosition(nextPos);
         }
         
