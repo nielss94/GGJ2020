@@ -379,7 +379,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Profile: {fileID: 11400000, guid: a123fc0ac58cb774e8592c925f167e7c, type: 2}
   m_StaticLightingSkyUniqueID: 1
-  m_SkySettings: {fileID: 1546633532}
+  m_SkySettings: {fileID: 1568138874}
   m_SkySettingsFromProfile: {fileID: -6082982312164148089, guid: a123fc0ac58cb774e8592c925f167e7c,
     type: 2}
 --- !u!4 &313761475
@@ -427,6 +427,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cd8234f7aaa69444afad8174706dab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baseThrust: 3000
+  speedLimit: 1000
   hoverForce: 700
   hoverHeight: 7
   forwardAccelleration: 3000
@@ -1263,7 +1265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdd59d84f0c7cdf4ca54554a24e8225c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1546633532
+--- !u!114 &1568138874
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
