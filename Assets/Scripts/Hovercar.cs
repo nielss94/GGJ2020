@@ -19,12 +19,12 @@ public class Hovercar : MonoBehaviour
 
     private Vector3 _move;
 
-    void Start()
+    private void Start()
     {
         _rigidBody = GetComponent<Rigidbody>();
     }
 
-    void Update()
+    private void Update()
     {
         // Thrust
         _currentThrust = 0.0f;
@@ -45,7 +45,7 @@ public class Hovercar : MonoBehaviour
         }
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         // Hover force
         RaycastHit hit;
@@ -84,9 +84,8 @@ public class Hovercar : MonoBehaviour
         }
     }
 
-    public void OnMove(InputValue value)
+    public void Vroom(Vector3 move)
     {
-        var input = value.Get<Vector2>();
-        _move = new Vector3(input.x, 0, input.y);
+        _move = move;
     }
 }
