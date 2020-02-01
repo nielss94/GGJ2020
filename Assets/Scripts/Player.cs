@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
     public bool CanMove => _canMove;
 
     private bool _isOnPlatform = false;
-    
+    private PlayerPickUp _playerPickUp = null;
     private PlayerStation _playerStation = null;
     private Rigidbody _rigidbody = null;
     private Vector3 _move = default;
@@ -26,6 +26,7 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
+        _playerPickUp = GetComponentInChildren<PlayerPickUp>();
         _centerToHovercar = FindObjectOfType<CenterToHovercar>();
         _playerStation = GetComponent<PlayerStation>();
         _rigidbody = GetComponent<Rigidbody>();
@@ -62,10 +63,14 @@ public class Player : MonoBehaviour
             _rigidbody.MovePosition(nextPos);
         }
         
-        _isOnPlatform = Physics.SphereCast(floorDetection.position, .05f, Vector3.down, out var hit, .65f,
+        _isOnPlatform = Physics.Raycast(floorDetection.position, Vector3.down, out var hit, .1f,
             LayerMask.GetMask("Platform"));
     }
 
+    public void OnUse()
+    {
+        _playerPickUp.PickUp();
+    }
     
     public void OnMove(InputValue value)
     {
