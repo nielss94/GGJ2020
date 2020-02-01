@@ -19,9 +19,13 @@ public class Hovercar : MonoBehaviour
 
     private Vector3 _move;
 
+    private bool motorStarted = false;
+
     private void Start()
     {
         _rigidBody = GetComponent<Rigidbody>();
+
+        InitAudio();
     }
 
     private void Update()
@@ -76,5 +80,11 @@ public class Hovercar : MonoBehaviour
     public void Vroom(Vector3 move)
     {
         _move = move;
+    }
+
+
+    private void InitAudio()
+    {
+     //        AudioManager.instance.PlayEngineSounds(0);
     }
 }

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - StationHitbox
   - UI
+  - AudioManager
   layers:
   - Default
   - TransparentFX

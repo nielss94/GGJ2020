@@ -45,7 +45,7 @@ public class Player : MonoBehaviour
         _playerSpawn = GameObject.Find("PlayerSpawn").transform;
         transform.position = _playerSpawn.position;
         transform.rotation = _playerSpawn.rotation;
-        transform.SetParent(_centerToHovercar.transform);
+        //transform.SetParent(_centerToHovercar.transform);
 
         _isDead = false;
     }
@@ -59,7 +59,7 @@ public class Player : MonoBehaviour
     {
         if (_canMove)
         {
-            Vector3 nextPos = _rigidbody.position + transform.TransformDirection(_move * (moveSpeed * Time.deltaTime));
+            Vector3 nextPos = _rigidbody.position + _move * (moveSpeed * Time.deltaTime);
             _rigidbody.MovePosition(nextPos);
         }
         
