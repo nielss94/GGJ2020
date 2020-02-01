@@ -12,6 +12,8 @@ public class PlayerStation : MonoBehaviour
 
     public event Action<Station> OnPossibleStationDeselected = delegate(Station station) { };
     public event Action<Station> OnActiveStationDeselected = delegate(Station station) { };
+    
+    public event Action<Station> OnNotTheRightMaterial = delegate(Station station) {  };
 
     private Station _possibleStation;
     private Station _activeStation;
@@ -20,6 +22,7 @@ public class PlayerStation : MonoBehaviour
     private bool _hasActiveStation;
 
     private bool _canChooseStations = false;
+    private bool _isRepairing = false;
 
     private void Awake()
     {
@@ -54,8 +57,14 @@ public class PlayerStation : MonoBehaviour
     {
         if (_canChooseStations)
         {
-            if (_hasActiveStation && _activeStation.GetIsHoldInteraction())
+            if (_hasActiveStation && (_activeStation.GetIsHoldInteraction() || _isRepairing))
             {
+                if (_isRepairing)
+                {
+                    _activeStation.OnIsRepaired -= SetStationAsPossibleWhenRepaired;
+                    _isRepairing = false;
+                }
+
                 SetPossibleStation(_activeStation);
                 RemoveCurrentActiveStation();
             }
@@ -72,6 +81,31 @@ public class PlayerStation : MonoBehaviour
         OnActiveStationSelected.Invoke(station);
 
         _activeStation.Initialize();
+
+        if (_activeStation.IsBroken)
+        {
+            //TODO: If right item is collected
+            if (false)
+            {
+                _isRepairing = true;
+                _activeStation.StartRepair();
+                _activeStation.OnIsRepaired += SetStationAsPossibleWhenRepaired;
+            }
+            else
+            {
+                OnNotTheRightMaterial.Invoke(_activeStation);
+                SetPossibleStation(_activeStation);
+                RemoveCurrentActiveStation();
+            }
+        }
+    }
+
+    private void SetStationAsPossibleWhenRepaired(Station station)
+    {
+        _isRepairing = false;
+        _activeStation.OnIsRepaired -= SetStationAsPossibleWhenRepaired;
+        RemoveCurrentActiveStation();
+        SetPossibleStation(station);
     }
 
     private void RemoveCurrentActiveStation()

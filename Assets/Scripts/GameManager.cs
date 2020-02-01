@@ -35,6 +35,12 @@ public class GameManager : MonoBehaviour
     private void StartGame()
     {
         _gameStarted = true;
+        StartCoroutine(InvokeStartGame());
+    }
+
+    private IEnumerator InvokeStartGame()
+    {
+        yield return new WaitForSeconds(0.1f);
         OnGameStarted.Invoke();
     }
 }
