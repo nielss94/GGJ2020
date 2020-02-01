@@ -16,7 +16,7 @@ public class SteeringWheel : Station
         
         if (IsActive && !IsBroken)
         {
-            //_sphereControls.Rotate(iets);
+            _sphereControls.Rotate(_move);
         }
     }
 
@@ -24,7 +24,7 @@ public class SteeringWheel : Station
     {
         base.Terminate();
         _move = Vector3.zero;
-        //_sphereControls.Rotate(iets);
+        _sphereControls.Rotate(_move);
     }
 
     public override void ProcessInput(InputValue value)

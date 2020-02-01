@@ -16,6 +16,7 @@ public class SphereControls : MonoBehaviour
 
     private void Update()
     {
+        _move.x = baseSpeed;
         transform.Rotate(_move * (baseSpeed * Time.deltaTime));
     }
 
