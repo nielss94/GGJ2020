@@ -63,7 +63,7 @@ public class Player : MonoBehaviour
             _rigidbody.MovePosition(nextPos);
         }
         
-        _isOnPlatform = Physics.SphereCast(floorDetection.position, .05f, Vector3.down, out var hit, .65f,
+        _isOnPlatform = Physics.Raycast(floorDetection.position, Vector3.down, out var hit, .1f,
             LayerMask.GetMask("Platform"));
     }
 
