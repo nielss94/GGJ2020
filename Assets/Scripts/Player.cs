@@ -17,10 +17,17 @@ public class Player : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody>();
     }
 
-    private void FixedUpdate()
+    private void Start()
     {
-        var nextPos = _rigidbody.position + transform.TransformDirection(_move * (moveSpeed * Time.fixedDeltaTime));
-        _rigidbody.MovePosition(nextPos);
+        GameObject tr = GameObject.Find("PlayerSpawn");
+        transform.SetParent(tr.transform);
+        transform.localPosition = Vector3.zero;
+    }
+
+
+    private void Update()
+    {
+        transform.Translate(_move * (moveSpeed * Time.deltaTime), Space.Self);
     }
 
     public void OnMove(InputValue value)

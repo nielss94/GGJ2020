@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Hovercar : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class Hovercar : MonoBehaviour
     private float _currentThrust = 0.0f;
     private float _currentTurnRate = 0.0f;
 
+    private Vector3 _move;
+
     void Start()
     {
         _rigidBody = GetComponent<Rigidbody>();
@@ -25,22 +28,20 @@ public class Hovercar : MonoBehaviour
     {
         // Thrust
         _currentThrust = 0.0f;
-        float thrustAxis = Input.GetAxis("Vertical");
-        if (thrustAxis > _deadZone)
+        if (_move.z > _deadZone)
         {
-            _currentThrust = thrustAxis * forwardAccelleration;
+            _currentThrust = _move.z * forwardAccelleration;
         }
-        else if (thrustAxis < -_deadZone)
+        else if (_move.z < -_deadZone)
         {
-            _currentThrust = thrustAxis * backwardAccelleration;
+            _currentThrust = _move.z * backwardAccelleration;
         }
 
         // Steering
         _currentTurnRate = 0.0f;
-        float turnAxis = Input.GetAxis("Horizontal");
-        if (Mathf.Abs(turnAxis) > _deadZone)
+        if (Mathf.Abs(_move.x) > _deadZone)
         {
-            _currentTurnRate = turnAxis;
+            _currentTurnRate = _move.x;
         }
     }
 
@@ -81,5 +82,11 @@ public class Hovercar : MonoBehaviour
         {
             _rigidBody.AddRelativeTorque(Vector3.up * _currentTurnRate * turnStrength);
         }
+    }
+
+    public void OnMove(InputValue value)
+    {
+        var input = value.Get<Vector2>();
+        _move = new Vector3(input.x, 0, input.y);
     }
 }
