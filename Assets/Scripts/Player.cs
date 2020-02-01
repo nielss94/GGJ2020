@@ -3,12 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Serialization;
+using DG.Tweening;
 
 public class Player : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 3f;
     [SerializeField] private Transform floorDetection = null;
+    [SerializeField] private float respawnTime = 3f;
     
     private bool _canMove = true;
     private bool _isOnPlatform = false;
@@ -17,33 +18,36 @@ public class Player : MonoBehaviour
     private Rigidbody _rigidbody = null;
     private Vector3 _move = default;
     private Transform _playerSpawn = null;
-    
+    private bool _isDead = false;
+    private CenterToHovercar _centerToHovercar;
+
     private void Awake()
     {
+        _centerToHovercar = FindObjectOfType<CenterToHovercar>();
         _playerStation = GetComponent<PlayerStation>();
         _rigidbody = GetComponent<Rigidbody>();
     }
 
     private void Start()
     {
-        _playerSpawn = GameObject.Find("PlayerSpawn").transform;
-        transform.position = _playerSpawn.position;
-        transform.rotation = Quaternion.identity;
-        transform.SetParent(FindObjectOfType<CenterToHovercar>().transform);
-
         _playerStation.OnActiveStationSelected += DisableMovement;
         _playerStation.OnActiveStationDeselected += EnableMovement;
+
+        Init();
+    }
+
+    private void Init()
+    {
+        _playerSpawn = GameObject.Find("PlayerSpawn").transform;
+        transform.position = _playerSpawn.position;
+        transform.rotation = _playerSpawn.rotation;
+        transform.SetParent(_centerToHovercar.transform);
+
+        _isDead = false;
     }
     
     private void Update()
     {
-        // if (_canMove)
-        // {
-        //     transform.Translate(_move * (moveSpeed * Time.deltaTime), Space.Self);
-        // }
-
-        
-
         _rigidbody.isKinematic = _isOnPlatform;
     }
 
@@ -58,6 +62,12 @@ public class Player : MonoBehaviour
         _isOnPlatform = Physics.SphereCast(floorDetection.position, .05f, Vector3.down, out var hit, 1,
             LayerMask.GetMask("Platform"));
     }
+    
+    public void OnMove(InputValue value)
+    {
+        var input = value.Get<Vector2>();
+        _move = new Vector3(input.x, 0, input.y);
+    }
 
     private void EnableMovement(Station station)
     {
@@ -69,9 +79,26 @@ public class Player : MonoBehaviour
         _canMove = false;
     }
 
-    public void OnMove(InputValue value)
+    private IEnumerator Die()
     {
-        var input = value.Get<Vector2>();
-        _move = new Vector3(input.x, _move.y, input.y);
+        DisableMovement(null);
+        transform.SetParent(null);
+        _isDead = true;
+        
+        yield return new WaitForSeconds(respawnTime);
+        EnableMovement(null);
+        Init();
+    }
+
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Terrain"))
+        {
+            if (!_isDead)
+            {
+                StartCoroutine(Die());
+            }
+        }
     }
 }
