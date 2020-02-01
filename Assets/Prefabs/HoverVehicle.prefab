@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 992725432859009806}
   - component: {fileID: 992725432859009805}
   - component: {fileID: 992725432859009804}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: HoverVehicle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
