@@ -3784,12 +3784,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 224467897}
-  m_LocalRotation: {x: 0.3929236, y: 0.5475122, z: -0.4333208, w: 0.59839344}
-  m_LocalPosition: {x: -844, y: 774.0003, z: -497.00012}
+  m_LocalRotation: {x: 0.3929236, y: 0.5475121, z: -0.43332073, w: 0.59839344}
+  m_LocalPosition: {x: -844, y: 774.00055, z: -497.00024}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 70.864006, y: 73.759, z: -15.632001}
 --- !u!1 &224993120 stripped
 GameObject:
@@ -13130,7 +13130,7 @@ PrefabInstance:
     - target: {fileID: 4125326677298062137, guid: 8692794ec3eda974f8b57b11d4429548,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4125326677298062137, guid: 8692794ec3eda974f8b57b11d4429548,
         type: 3}
@@ -21232,6 +21232,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 7448282208943197907, guid: fb74176f0fe10374f97df84aae94d69c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb74176f0fe10374f97df84aae94d69c, type: 3}
 --- !u!114 &1660087782 stripped
@@ -25657,6 +25662,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlanetSandV2
       objectReference: {fileID: 0}
+    - target: {fileID: 2825272512782179117, guid: c2f88597db493d54b81f6d0cef101c1b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 7797205427440538376, guid: c2f88597db493d54b81f6d0cef101c1b,
         type: 3}
       propertyPath: m_Mesh
@@ -25684,6 +25694,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseSpeed: 10
+--- !u!135 &2029391851
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029391849}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 750.0002
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2031794425 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6842841623128068257, guid: c2f88597db493d54b81f6d0cef101c1b,
