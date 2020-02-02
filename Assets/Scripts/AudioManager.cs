@@ -70,7 +70,7 @@ public class AudioManager : MonoBehaviour
                 volume = 0.9f;
                 break;
             case 2:
-                volume = 0.3f;
+                volume = 0.25f;
                 break;
             case 3:
                 volume = 0.4f;
@@ -149,7 +149,7 @@ public class AudioManager : MonoBehaviour
         PlayLoop(pickupSounds[index]);
     } 
 
-    
+
 
 
 }
