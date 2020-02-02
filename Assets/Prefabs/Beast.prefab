@@ -5489,6 +5489,7 @@ GameObject:
   - component: {fileID: 8155852095433198268}
   - component: {fileID: 2025004739507807094}
   - component: {fileID: 6011769459737106476}
+  - component: {fileID: 8851686919422349095}
   m_Layer: 8
   m_Name: Cone001
   m_TagString: Untagged
@@ -5557,6 +5558,21 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &8851686919422349095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1559144256842128883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7f65f0f38d00ac45aa7afbc0dab4ff4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationAngle: {x: 0, y: 1, z: 0}
+  rotationSpeed: 200
+  space: 1
 --- !u!1 &1790307385622988241
 GameObject:
   m_ObjectHideFlags: 0
@@ -5677,7 +5693,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1800945703622650935}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.4287143e-11, y: 1.5499992, z: 0.000061035156}
+  m_LocalPosition: {x: 2.0037303e-12, y: 1.5499878, z: 0.00003361702}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6738663078366016389}
@@ -11186,6 +11202,7 @@ GameObject:
   - component: {fileID: 1249772656878888196}
   - component: {fileID: 6355117343910952253}
   - component: {fileID: 3778674794930608320}
+  - component: {fileID: 814423023}
   m_Layer: 8
   m_Name: CirclesawPointy
   m_TagString: Untagged
@@ -11200,13 +11217,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4335830439890894097}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: -0.61849517, y: 0.34272987, z: 0.34272993, w: 0.61849517}
   m_LocalPosition: {x: -2.5693264, y: -0.61888725, z: -9.772064}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 6738663078366016389}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 57.985004}
 --- !u!33 &6355117343910952253
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -11254,6 +11271,21 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &814423023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4335830439890894097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7f65f0f38d00ac45aa7afbc0dab4ff4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationAngle: {x: 0, y: 0, z: -1}
+  rotationSpeed: 200
+  space: 1
 --- !u!1 &4446526963649592120
 GameObject:
   m_ObjectHideFlags: 0
@@ -11265,6 +11297,7 @@ GameObject:
   - component: {fileID: 3806514890863880619}
   - component: {fileID: 3700753400591481258}
   - component: {fileID: 797831649544683702}
+  - component: {fileID: 503574683}
   m_Layer: 8
   m_Name: CirclesawCenter
   m_TagString: Untagged
@@ -11279,13 +11312,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4446526963649592120}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: -0.61849517, y: 0.34272987, z: 0.34272993, w: 0.61849517}
   m_LocalPosition: {x: -2.5693264, y: -0.61888725, z: -9.772064}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 6738663078366016389}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 57.985004}
 --- !u!33 &3700753400591481258
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -11333,6 +11366,21 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &503574683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4446526963649592120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7f65f0f38d00ac45aa7afbc0dab4ff4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationAngle: {x: 0, y: 0, z: -1}
+  rotationSpeed: 200
+  space: 1
 --- !u!1 &4703763686817231386
 GameObject:
   m_ObjectHideFlags: 0
@@ -21475,9 +21523,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca698b6ed5f0ae243b049bf84e6c5802, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxExtension: 2
-  wheelRadius: 2
-  wheelMesh: {fileID: 2494782971425335436}
+  maxExtension: 0
+  wheelRadius: 0
+  wheelMesh: {fileID: 0}
 --- !u!1 &6681811410344786371
 GameObject:
   m_ObjectHideFlags: 0
@@ -21522,9 +21570,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca698b6ed5f0ae243b049bf84e6c5802, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxExtension: 2
-  wheelRadius: 2
-  wheelMesh: {fileID: 4264893285211732808}
+  maxExtension: 0
+  wheelRadius: 0
+  wheelMesh: {fileID: 0}
 --- !u!1 &7484116212402681848
 GameObject:
   m_ObjectHideFlags: 0
@@ -21936,9 +21984,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca698b6ed5f0ae243b049bf84e6c5802, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxExtension: 2
-  wheelRadius: 2
-  wheelMesh: {fileID: 8105712922013743354}
+  maxExtension: 0
+  wheelRadius: 0
+  wheelMesh: {fileID: 0}
 --- !u!1 &8398967282883046788
 GameObject:
   m_ObjectHideFlags: 0
@@ -22222,9 +22270,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca698b6ed5f0ae243b049bf84e6c5802, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxExtension: 2
-  wheelRadius: 2
-  wheelMesh: {fileID: 3794381348436746235}
+  maxExtension: 0
+  wheelRadius: 0
+  wheelMesh: {fileID: 0}
 --- !u!1001 &2209564110561327188
 PrefabInstance:
   m_ObjectHideFlags: 0
