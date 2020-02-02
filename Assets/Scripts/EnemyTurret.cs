@@ -43,7 +43,9 @@ public class EnemyTurret : MonoBehaviour
     private void Shoot()
     {
         if(!_gameHasStarted) return;
-        
+
+        AudioManager.instance.PlayEnemySound(0);
+
         PlayMuzzleFlashes();
         SpawnBullets();
 
@@ -55,7 +57,9 @@ public class EnemyTurret : MonoBehaviour
         if(_hasExploded) return;
 
         _hasExploded = true;
-        
+
+        AudioManager.instance.PlayEnemySound(1);
+
         _towerDestroyedManager.AddTower();
         Instantiate(explodeParticle, transform.position, Quaternion.identity, _planet.transform);
         Destroy(this);
