@@ -21,7 +21,7 @@ public class SteeringWheel : Station
         if (IsActive && !IsBroken)
         {
             _sphereControls.Steer(_move);
-            _sphereControls.Accelerate(_move);
+            // _sphereControls.Accelerate(_move);
 
             float steerInput = _move.x * steerRotation;
             wheelAngle = Mathf.Lerp(wheelAngle, steerInput, steerSpeed *            Time.deltaTime);

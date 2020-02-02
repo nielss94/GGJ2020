@@ -102,12 +102,12 @@ public class PlayerStation : MonoBehaviour
                 RemoveCurrentActiveStation();
             }
         }
-
-        if (_activeStation is Furnace)
+        else if (_activeStation is Furnace)
         {
             if (_playerPickUp.CurrentPickUp != null && _playerPickUp.CurrentPickUp.GetComponent<PickUpType>().type == _activeStation.fuelType)
             {
                 _activeStation.AddFuel();
+                _playerPickUp.Drop();
             }
         }
     }
