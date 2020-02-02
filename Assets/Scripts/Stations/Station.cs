@@ -7,6 +7,8 @@ using UnityEngine.InputSystem;
 public abstract class Station : MonoBehaviour
 {
     public event Action<Station> OnIsRepaired = delegate(Station station) { };
+    public event Action<Station> OnIsBroken = delegate(Station station) { };
+
     public PickUpTypes repairType;
     public PickUpTypes fuelType;
     [SerializeField]
@@ -29,10 +31,12 @@ public abstract class Station : MonoBehaviour
 
     private float _timeLeftForRepairing;
     private bool _startedRepair;
+    private float _defaultHealth;
 
     protected void Start()
     {
         brokenParticles.Stop();
+        _defaultHealth = health;
     }
 
     protected void Awake()
@@ -86,10 +90,12 @@ public abstract class Station : MonoBehaviour
     public void Break()
     {
         _isBroken = true;
+        OnIsBroken.Invoke(this);
     }
 
     public void Repair()
     {
+        health = _defaultHealth;
         _isBroken = false;
         brokenParticles.Stop();
     }
