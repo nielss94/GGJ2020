@@ -5,9 +5,11 @@ public class AudioManager : MonoBehaviour
 {
     public AudioSource efxSource;                    //Drag a reference to the audio source which will play the sound effects.
     public AudioSource musicSource;
+    public AudioSource collisionSource;
     public AudioClip[] songs;
     public AudioClip[] engineSounds;
     public AudioClip[] pickupSounds;
+    public AudioClip[] collisionSounds;
 
     public static AudioManager instance = null;        //Allows other scripts to call functions from SoundManager.                
     public float lowPitchRange = .95f;                //The lowest a sound effect will be randomly pitched.
@@ -67,7 +69,7 @@ public class AudioManager : MonoBehaviour
                 volume = 0.8f;
                 break;
             case 1:
-                volume = 0.9f;
+                volume = 1.0f;
                 break;
             case 2:
                 volume = 0.25f;
@@ -149,7 +151,10 @@ public class AudioManager : MonoBehaviour
         PlayLoop(pickupSounds[index]);
     } 
 
-
+   public void PlayCollisionSound()
+   {
+        RandomizeSfx(pickupSounds);
+   } 
 
 
 }
