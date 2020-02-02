@@ -19,6 +19,7 @@ public class EnemyTurret : MonoBehaviour
 
     private bool _startShooting = false;
     private bool _canShoot = true;
+    private bool _gameHasStarted = false;
     private bool _hasExploded = false;
     
     private TowerDestroyedManager _towerDestroyedManager;
@@ -28,6 +29,8 @@ public class EnemyTurret : MonoBehaviour
     {
         _towerDestroyedManager = FindObjectOfType<TowerDestroyedManager>();
         _planet = FindObjectOfType<SphereControls>().gameObject;
+
+        GameManager.OnGameStarted += () => _gameHasStarted = true;
     }
 
     private void Update()
@@ -39,6 +42,8 @@ public class EnemyTurret : MonoBehaviour
 
     private void Shoot()
     {
+        if(!_gameHasStarted) return;
+        
         PlayMuzzleFlashes();
         SpawnBullets();
 
