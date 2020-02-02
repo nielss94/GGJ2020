@@ -6,6 +6,7 @@ using UnityEngine;
 public class SphereControls : MonoBehaviour
 {
     [SerializeField] private float baseSpeed = 3f;
+	[SerializeField] private float rotateMultiplier = 1f;
 
     private Vector3 _move;
     public Vector3 Move => _move;
@@ -23,6 +24,6 @@ public class SphereControls : MonoBehaviour
 
     public void Rotate(Vector3 move)
     {
-        _move.y = move.x * baseSpeed * -1;
+        _move.y = move.x * baseSpeed * -1 * rotateMultiplier;
     }
 }
