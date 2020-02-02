@@ -13,7 +13,7 @@ public class Crusher : MonoBehaviour
         {
             _conveyorBelt.AddToBelt(resource.part);
             Destroy(resource.gameObject);
-            AudioManager.instance.PlayPickupSounds(0);
+            //AudioManager.instance.PlayPickupSounds(0);
         }
     }
 }
