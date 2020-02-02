@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5787135089570862287}
   - component: {fileID: 243616514473544763}
   - component: {fileID: 1033807885172263011}
-  m_Layer: 8
+  m_Layer: 14
   m_Name: MiddleMuzzleFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4823,7 +4823,7 @@ GameObject:
   - component: {fileID: 3697406552639172423}
   - component: {fileID: 7106465346273161147}
   - component: {fileID: 6963518560124014648}
-  m_Layer: 8
+  m_Layer: 14
   m_Name: MiddleMuzzleFlash (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9635,7 +9635,7 @@ GameObject:
   - component: {fileID: 7201243353723509212}
   - component: {fileID: 8737901509040562934}
   - component: {fileID: 1504384593069102440}
-  m_Layer: 8
+  m_Layer: 14
   m_Name: MiddleMuzzleFlash (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14447,9 +14447,10 @@ GameObject:
   - component: {fileID: 1025899943865892586}
   - component: {fileID: 5274287410074823729}
   - component: {fileID: 4353317838199497505}
-  m_Layer: 0
+  - component: {fileID: 4414192834021387634}
+  m_Layer: 14
   m_Name: Towerbase
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14515,6 +14516,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &4414192834021387634
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2345291716692058689}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 8.607726, y: 13.778456, z: 9.050698}
+  m_Center: {x: 0, y: 6.889228, z: 0}
 --- !u!1 &3827956816488451081
 GameObject:
   m_ObjectHideFlags: 0
@@ -14526,7 +14540,7 @@ GameObject:
   - component: {fileID: 1635304784600077008}
   - component: {fileID: 6436108658365537694}
   - component: {fileID: 1526888140999924680}
-  m_Layer: 8
+  m_Layer: 14
   m_Name: MiddleMuzzleFlash (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19338,7 +19352,7 @@ GameObject:
   - component: {fileID: 4262335385702281735}
   - component: {fileID: 4125497471326206704}
   - component: {fileID: 3016022264507286515}
-  m_Layer: 8
+  m_Layer: 14
   m_Name: MiddleMuzzleFlash (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24150,7 +24164,7 @@ GameObject:
   - component: {fileID: 3812715712180211353}
   - component: {fileID: 7447003879452275997}
   - component: {fileID: 8378661518375587285}
-  m_Layer: 8
+  m_Layer: 14
   m_Name: MiddleMuzzleFlash (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28962,7 +28976,7 @@ GameObject:
   - component: {fileID: 1815650285923773096}
   - component: {fileID: 5387429548731279915}
   - component: {fileID: 8270871254968466062}
-  m_Layer: 8
+  m_Layer: 14
   m_Name: MiddleMuzzleFlash (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33774,7 +33788,7 @@ GameObject:
   - component: {fileID: 1479444702372979712}
   - component: {fileID: 6045418383960187465}
   - component: {fileID: 1929208605138079471}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Turretguns
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33931,6 +33945,8 @@ MonoBehaviour:
   - {fileID: 3812715712180211353}
   - {fileID: 4262335385702281735}
   shootDelay: 0.75
+  explodeParticle: {fileID: 4808497991944414360, guid: 8cede66a0e78b1549a2269bd2b346cd3,
+    type: 3}
 --- !u!136 &55975569818185581
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -33956,7 +33972,7 @@ GameObject:
   - component: {fileID: 5825854979714964372}
   - component: {fileID: 7245755103265744363}
   - component: {fileID: 8008679813897119952}
-  m_Layer: 8
+  m_Layer: 14
   m_Name: MiddleMuzzleFlash (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
