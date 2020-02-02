@@ -7,6 +7,10 @@ TagManager:
   - StationHitbox
   - UI
   - AudioManager
+  - Bullet
+  - EnemyBullet
+  - Beast
+  - BulletImpact
   layers:
   - Default
   - TransparentFX
@@ -20,8 +24,8 @@ TagManager:
   - Terrain
   - ConveyorBeltPart
   - PickUp
-  - 
-  - 
+  - BulletImpact
+  - EnemyProjectiles
   - 
   - 
   - 

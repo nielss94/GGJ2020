@@ -70,6 +70,14 @@ public class Player : MonoBehaviour
     {
         _playerPickUp.PickUp();
     }
+
+    public void OnShoot()
+    {
+        Turret turret = _playerStation.ActiveStation as Turret;
+
+        if (turret != null)
+            turret.Shoot();
+    }
     
     public void OnMove(InputValue value)
     {

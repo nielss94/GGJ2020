@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 1238908138956121845}
   - component: {fileID: 1238908138956121846}
   - component: {fileID: 1238908138956121847}
-  - component: {fileID: 1238908138956121840}
   - component: {fileID: -1593453179014776743}
   - component: {fileID: 8090103881063032056}
-  m_Layer: 0
-  m_Name: Projectile
-  m_TagString: Bullet
+  - component: {fileID: 7130523680591612894}
+  m_Layer: 13
+  m_Name: EnemyProjectile
+  m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a164dfa40225efe48a5d56a2505c7851, type: 2}
+  - {fileID: 2100000, guid: 0ac5c0d11564e134c8516ca09723e121, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -82,20 +82,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!136 &1238908138956121840
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1238908138956121841}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &-1593453179014776743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109,6 +95,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 8090103881063032056}
+  impactParticle: {fileID: 4808497991944414360, guid: 8cede66a0e78b1549a2269bd2b346cd3,
+    type: 3}
   bulletForce: 175
   lifeTime: 2
 --- !u!54 &8090103881063032056
@@ -127,3 +115,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!65 &7130523680591612894
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1238908138956121841}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0.10265112, y: 0, z: 0}

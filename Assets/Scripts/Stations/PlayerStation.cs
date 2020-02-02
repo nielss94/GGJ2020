@@ -19,6 +19,7 @@ public class PlayerStation : MonoBehaviour
     
     private Station _possibleStation;
     private Station _activeStation;
+    public Station ActiveStation => _activeStation;
 
     private bool _hasPossibleStation;
     private bool _hasActiveStation;
