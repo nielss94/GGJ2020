@@ -7,12 +7,13 @@ public class Railing : Station
 {
     public override void Initialize()
     {
+        base.Initialize();
         Debug.Log("Holding the railing");
     }
 
     public override void Terminate()
     {
-        throw new System.NotImplementedException();
+        base.Terminate();
     }
 
     public override void ProcessInput(InputValue value)

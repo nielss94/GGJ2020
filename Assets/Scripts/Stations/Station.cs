@@ -93,6 +93,7 @@ public abstract class Station : MonoBehaviour
     {
         _isBroken = true;
         OnIsBroken.Invoke(this);
+        AudioManager.instance.IncreaseDanger();
     }
 
     public void Repair()
