@@ -55,10 +55,15 @@ public class PlayerPickUp : MonoBehaviour
             _conveyorBelt.RemoveFromBelt(_hovering);
             _currentPickUp = _hovering;
         }
+        else if(_currentPickUp)
+        {
+            Drop();
+        }
     }
 
     public void Drop()
     {
         Destroy(_currentPickUp);
+        _hovering = null;
     }
 }

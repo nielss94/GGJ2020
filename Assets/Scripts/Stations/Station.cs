@@ -20,6 +20,8 @@ public abstract class Station : MonoBehaviour
 
     [SerializeField]
     private ParticleSystem brokenParticles = null;
+    [SerializeField]
+    private ParticleSystem impactParticle = null;
 
     private bool _isActive = false;
     public bool IsActive => _isActive;
@@ -108,6 +110,7 @@ public abstract class Station : MonoBehaviour
     public void Damage()
     {
         health--;
+        Instantiate(impactParticle, transform);
         if (health <= 0)
         {
             Break();
