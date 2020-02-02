@@ -45,7 +45,6 @@ public class Player : MonoBehaviour
         _playerSpawn = GameObject.Find("PlayerSpawn").transform;
         transform.position = _playerSpawn.position;
         transform.rotation = _playerSpawn.rotation;
-        //transform.SetParent(_centerToHovercar.transform);
 
         _isDead = false;
     }

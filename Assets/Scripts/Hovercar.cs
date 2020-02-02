@@ -20,8 +20,6 @@ public class Hovercar : MonoBehaviour
 
     private Vector3 _move;
 
-    private bool motorStarted = false;
-
     private void Start()
     {
         _rigidBody = GetComponent<Rigidbody>();
@@ -41,23 +39,6 @@ public class Hovercar : MonoBehaviour
         {
             _currentThrust = _move.z * backwardAccelleration;
         }
-
-        if (_currentThrust != 0.0f && !motorStarted)
-        {
-            motorStarted = true;
-            AudioManager.instance.PlayEngineSounds(1);
-        }
-
-        if (_currentThrust == 0.0f && motorStarted)
-        {
-            motorStarted = false;
-            AudioManager.instance.PlayEngineSounds(0);
-        }
-
-
-
-
-            Debug.Log(motorStarted);
 
        // Steering
        _currentTurnRate = 0.0f;
@@ -114,6 +95,6 @@ public class Hovercar : MonoBehaviour
 
     private void InitAudio()
     {
-     //        AudioManager.instance.PlayEngineSounds(0);
+        AudioManager.instance.PlayEngineSounds(0);
     }
 }

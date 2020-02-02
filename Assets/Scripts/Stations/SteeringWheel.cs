@@ -6,9 +6,13 @@ using UnityEngine.InputSystem;
 
 public class SteeringWheel : Station
 {
-    [SerializeField] private Hovercar _hovercar = null;
+    [SerializeField] private SphereControls _sphereControls = null;
+    [SerializeField] private GameObject[] steeringWheels;
+    [SerializeField] private float steerRotation;
+    [SerializeField] private float steerSpeed;
     
     private Vector3 _move;
+    private float wheelAngle;
     
     private void Update()
     {
@@ -16,7 +20,14 @@ public class SteeringWheel : Station
         
         if (IsActive && !IsBroken)
         {
-            _hovercar.Vroom(_move);
+            _sphereControls.Rotate(_move);
+
+            float steerInput = _move.x * steerRotation;
+            wheelAngle = Mathf.Lerp(wheelAngle, steerInput, steerSpeed *            Time.deltaTime);
+            foreach (GameObject wheel in steeringWheels)
+            {
+                wheel.transform.localRotation = Quaternion.Euler(wheel.transform.localRotation.x, wheel.transform.localRotation.y + wheelAngle, transform.localRotation.z);
+            }
         }
     }
 
@@ -24,7 +35,7 @@ public class SteeringWheel : Station
     {
         base.Terminate();
         _move = Vector3.zero;
-        _hovercar.Vroom(_move);
+        _sphereControls.Rotate(_move);
     }
 
     public override void ProcessInput(InputValue value)
