@@ -7,6 +7,8 @@ TagManager:
   - StationHitbox
   - UI
   - AudioManager
+  - Bullet
+  - EnemyBullet
   layers:
   - Default
   - TransparentFX
