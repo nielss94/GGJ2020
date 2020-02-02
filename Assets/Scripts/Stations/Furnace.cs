@@ -21,6 +21,7 @@ public class Furnace : Station
     public override void AddFuel()
     {
         _currentFuelLevel++;
+        OnFurnaceFuelChanged.Invoke(_currentFuelLevel);
     }
 
     public override void ProcessInput(InputValue value)

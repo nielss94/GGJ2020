@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Bart/Turrets.unity
-    guid: 40e23a00d545ba14d8bd9e06832b0218
+    path: Assets/Scenes/GlobeV4.unity
+    guid: 692e1a9d234ea334cb7d791ea734bcae
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: fdd87db6fe1e2644f97a1d4529bda2b6,
       type: 2}
