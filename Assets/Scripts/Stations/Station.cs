@@ -32,6 +32,9 @@ public abstract class Station : MonoBehaviour
     public bool IsBroken => _isBroken;
 
     private float _timeLeftForRepairing;
+
+    public float TimeLeftForRepairing => _timeLeftForRepairing;
+
     private bool _startedRepair;
     private float _defaultHealth;
 

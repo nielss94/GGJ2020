@@ -30,6 +30,36 @@ Transform:
   m_Father: {fileID: 6373127167119177070}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &665508872536570915
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 641040292660986574}
+  m_Layer: 0
+  m_Name: FillPromptLocation (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &641040292660986574
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 665508872536570915}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: -1.08}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6373127167119177070}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2857840331639072556
 GameObject:
   m_ObjectHideFlags: 0
@@ -186,6 +216,7 @@ Transform:
   - {fileID: 2980820966823549527}
   - {fileID: 482273055148447598}
   - {fileID: 5395902846080824529}
+  - {fileID: 641040292660986574}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -302,8 +333,11 @@ MonoBehaviour:
     type: 3}
   repairButtonPrompt: {fileID: 3740637801893413942, guid: 94d8582c02c2c1d4b9806ecc6db67405,
     type: 3}
+  repairingImagePrompt: {fileID: 3740637801893413942, guid: 94d8582c02c2c1d4b9806ecc6db67405,
+    type: 3}
   playerStation: {fileID: 5329380375229139207}
   materialPromptLocation: {fileID: 2980820966823549527}
+  repairPromptLocation: {fileID: 641040292660986574}
   needMaterialsPrompt: {fileID: 3740637801893413942, guid: cceb9b0141900fb4095afddd6a2b031f,
     type: 3}
 --- !u!114 &3958668103846578083

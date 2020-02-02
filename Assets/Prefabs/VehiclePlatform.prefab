@@ -4865,7 +4865,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9270682503edc34a9c907e0534e3150, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  station: {fileID: 0}
+  station: {fileID: 808419666}
 --- !u!1 &798044418
 GameObject:
   m_ObjectHideFlags: 0
@@ -4923,7 +4923,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9270682503edc34a9c907e0534e3150, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  station: {fileID: 0}
+  station: {fileID: 1358645190}
 --- !u!1 &808419664
 GameObject:
   m_ObjectHideFlags: 0
@@ -5051,11 +5051,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   repairType: 1
   fuelType: 0
-  isHoldInteraction: 0
+  isHoldInteraction: 1
   health: 3
   startBroken: 0
   repairTimer: 3
   brokenParticles: {fileID: 3806532687894024691}
+  impactParticle: {fileID: 894013128957127493, guid: 8cede66a0e78b1549a2269bd2b346cd3,
+    type: 3}
 --- !u!1 &958487081
 GameObject:
   m_ObjectHideFlags: 0
@@ -5113,7 +5115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9270682503edc34a9c907e0534e3150, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  station: {fileID: 0}
+  station: {fileID: 1323323503}
 --- !u!1 &1020795169
 GameObject:
   m_ObjectHideFlags: 0
@@ -5325,11 +5327,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   repairType: 1
   fuelType: 0
-  isHoldInteraction: 0
+  isHoldInteraction: 1
   health: 3
   startBroken: 0
   repairTimer: 3
   brokenParticles: {fileID: 3806532687374969859}
+  impactParticle: {fileID: 894013128957127493, guid: 8cede66a0e78b1549a2269bd2b346cd3,
+    type: 3}
 --- !u!1 &1358645188
 GameObject:
   m_ObjectHideFlags: 0
@@ -5457,11 +5461,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   repairType: 1
   fuelType: 0
-  isHoldInteraction: 0
+  isHoldInteraction: 1
   health: 3
   startBroken: 0
   repairTimer: 3
   brokenParticles: {fileID: 3806532686713977820}
+  impactParticle: {fileID: 894013128957127493, guid: 8cede66a0e78b1549a2269bd2b346cd3,
+    type: 3}
 --- !u!1 &1426840685
 GameObject:
   m_ObjectHideFlags: 0
@@ -5589,11 +5595,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   repairType: 1
   fuelType: 0
-  isHoldInteraction: 0
+  isHoldInteraction: 1
   health: 3
   startBroken: 0
   repairTimer: 3
   brokenParticles: {fileID: 3806532688054910353}
+  impactParticle: {fileID: 894013128957127493, guid: 8cede66a0e78b1549a2269bd2b346cd3,
+    type: 3}
 --- !u!1 &1692783368
 GameObject:
   m_ObjectHideFlags: 0
@@ -10475,11 +10483,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   repairType: 1
   fuelType: 0
-  isHoldInteraction: 0
+  isHoldInteraction: 1
   health: 3
   startBroken: 0
   repairTimer: 3
   brokenParticles: {fileID: 3806532687554997563}
+  impactParticle: {fileID: 894013128957127493, guid: 8cede66a0e78b1549a2269bd2b346cd3,
+    type: 3}
 --- !u!1 &1743127361
 GameObject:
   m_ObjectHideFlags: 0
@@ -10697,7 +10707,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9270682503edc34a9c907e0534e3150, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  station: {fileID: 0}
+  station: {fileID: 1426840687}
 --- !u!1 &1998470746
 GameObject:
   m_ObjectHideFlags: 0
@@ -10755,7 +10765,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9270682503edc34a9c907e0534e3150, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  station: {fileID: 0}
+  station: {fileID: 1725002905}
 --- !u!1 &66298283372857724
 GameObject:
   m_ObjectHideFlags: 0
@@ -15893,6 +15903,8 @@ MonoBehaviour:
   startBroken: 0
   repairTimer: 3
   brokenParticles: {fileID: 5394556446046075500}
+  impactParticle: {fileID: 894013128957127493, guid: 8cede66a0e78b1549a2269bd2b346cd3,
+    type: 3}
   _sphereControls: {fileID: 0}
   steeringWheels:
   - {fileID: 7117833490157018000}
@@ -35166,6 +35178,8 @@ MonoBehaviour:
   startBroken: 0
   repairTimer: 3
   brokenParticles: {fileID: 83818096}
+  impactParticle: {fileID: 894013128957127493, guid: 8cede66a0e78b1549a2269bd2b346cd3,
+    type: 3}
   rotateSpeed: 24
   maxRotation: 210
   minRotation: 150
@@ -40060,6 +40074,8 @@ MonoBehaviour:
   startBroken: 0
   repairTimer: 3
   brokenParticles: {fileID: 1692783371}
+  impactParticle: {fileID: 894013128957127493, guid: 8cede66a0e78b1549a2269bd2b346cd3,
+    type: 3}
   rotateSpeed: 24
   maxRotation: 210
   minRotation: 150
@@ -40591,6 +40607,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6823503747818374405, guid: 75803552427887340b470c29730acab0,
+        type: 3}
+      propertyPath: impactParticle
+      value: 
+      objectReference: {fileID: 894013128957127493, guid: 8cede66a0e78b1549a2269bd2b346cd3,
+        type: 3}
     - target: {fileID: 6823503747818374411, guid: 75803552427887340b470c29730acab0,
         type: 3}
       propertyPath: m_Name
@@ -40732,7 +40754,7 @@ PrefabInstance:
     - target: {fileID: 1800945703622650930, guid: 385788ac54f112b408e01d3758ca55a9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.000000011920861
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1800945703622650930, guid: 385788ac54f112b408e01d3758ca55a9,
         type: 3}
@@ -41220,6 +41242,7 @@ MonoBehaviour:
   startBroken: 0
   repairTimer: 3
   brokenParticles: {fileID: 1692783371}
+  impactParticle: {fileID: 0}
   rotateSpeed: 24
   maxRotation: 210
   minRotation: 150
