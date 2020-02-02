@@ -26,6 +26,7 @@ public class PlayerStation : MonoBehaviour
 
     private bool _canChooseStations = false;
     private bool _isRepairing = false;
+    public bool IsRepairing => _isRepairing;
 
     private void Awake()
     {
@@ -91,6 +92,7 @@ public class PlayerStation : MonoBehaviour
             if (_playerPickUp.CurrentPickUp != null && _playerPickUp.CurrentPickUp.GetComponent<PickUpType>().type == _activeStation.repairType)
             {
                 _isRepairing = true;
+                DebugGUI.LogPersistent("IsRepairing", $"{_isRepairing}");
                 _activeStation.StartRepair();
                 _activeStation.OnIsRepaired += SetStationAsPossibleWhenRepaired;
                 _playerPickUp.Drop();

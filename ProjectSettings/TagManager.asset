@@ -11,6 +11,7 @@ TagManager:
   - EnemyBullet
   - Beast
   - BulletImpact
+  - Tower
   layers:
   - Default
   - TransparentFX
@@ -26,8 +27,8 @@ TagManager:
   - PickUp
   - BulletImpact
   - EnemyProjectiles
-  - 
-  - 
+  - EnemyTurret
+  - Bullet
   - 
   - 
   - 
