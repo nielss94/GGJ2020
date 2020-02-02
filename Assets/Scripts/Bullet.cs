@@ -7,7 +7,10 @@ public class Bullet : MonoBehaviour
 {
     [SerializeField]
     private Rigidbody rb;
-    
+
+    [SerializeField]
+    private GameObject impactParticle = null;
+
     [SerializeField]
     private float bulletForce = 20f;
     [SerializeField]
@@ -18,5 +21,15 @@ public class Bullet : MonoBehaviour
         rb.AddForce(transform.up * bulletForce);
 
         Destroy(gameObject, lifeTime);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (!(other.CompareTag("BulletImpact") && CompareTag("EnemyBullet"))) return;
+
+        DebugGUI.Log("hit");
+
+        Instantiate(impactParticle, transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 }

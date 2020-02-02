@@ -109,8 +109,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 8090103881063032056}
-  bulletForce: 150
-  lifeTime: 1.5
+  bulletForce: 175
+  lifeTime: 2
 --- !u!54 &8090103881063032056
 Rigidbody:
   m_ObjectHideFlags: 0
