@@ -8,6 +8,7 @@ public abstract class Station : MonoBehaviour
 {
     public event Action<Station> OnIsRepaired = delegate(Station station) { };
     public PickUpTypes repairType;
+    public PickUpTypes fuelType;
     [SerializeField]
     private bool isHoldInteraction = false;
     [SerializeField]
@@ -96,6 +97,12 @@ public abstract class Station : MonoBehaviour
     public void StartRepair()
     {
         _startedRepair = true;
+    }
+
+
+    public virtual void AddFuel()
+    {
+        // :)
     }
 
     public void Damage()
