@@ -456,6 +456,11 @@ MonoBehaviour:
   repairTimer: 3
   brokenParticles: {fileID: 5394556446046075500}
   _sphereControls: {fileID: 0}
+  steeringWheels:
+  - {fileID: 7117833490157018000}
+  - {fileID: 8426509258664750311}
+  steerRotation: 12
+  steerSpeed: 5
 --- !u!1 &6555334436361149945
 GameObject:
   m_ObjectHideFlags: 0
