@@ -15,7 +15,7 @@ public class Bullet : MonoBehaviour
     private float bulletForce = 20f;
     [SerializeField]
     private float lifeTime = 5f;
-
+    
     private void Start()
     {
         rb.AddForce(transform.up * bulletForce);
@@ -25,11 +25,15 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!(other.CompareTag("BulletImpact") && CompareTag("EnemyBullet"))) return;
+        if (other.CompareTag("BulletImpact") && CompareTag("EnemyBullet"))
+        {
+            Instantiate(impactParticle, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
 
-        DebugGUI.Log("hit");
-
-        Instantiate(impactParticle, transform.position, Quaternion.identity);
-        Destroy(gameObject);
+        if (other.CompareTag("Tower") && CompareTag("Bullet"))
+        {
+            other.transform.parent.gameObject.GetComponent<EnemyTurret>().Explode();
+        }
     }
 }
