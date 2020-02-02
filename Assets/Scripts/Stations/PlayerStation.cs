@@ -15,6 +15,8 @@ public class PlayerStation : MonoBehaviour
     
     public event Action<Station> OnNotTheRightMaterial = delegate(Station station) {  };
 
+    private PlayerPickUp _playerPickUp = null;
+    
     private Station _possibleStation;
     private Station _activeStation;
     public Station ActiveStation => _activeStation;
@@ -27,6 +29,7 @@ public class PlayerStation : MonoBehaviour
 
     private void Awake()
     {
+        _playerPickUp = GetComponentInChildren<PlayerPickUp>();
         GameManager.OnGameStarted += EnableStationChoosing;
     }
 
@@ -85,12 +88,12 @@ public class PlayerStation : MonoBehaviour
 
         if (_activeStation.IsBroken)
         {
-            //TODO: If right item is collected
-            if (false)
+            if (_playerPickUp.CurrentPickUp != null && _playerPickUp.CurrentPickUp.GetComponent<PickUpType>().type == _activeStation.repairType)
             {
                 _isRepairing = true;
                 _activeStation.StartRepair();
                 _activeStation.OnIsRepaired += SetStationAsPossibleWhenRepaired;
+                _playerPickUp.Drop();
             }
             else
             {

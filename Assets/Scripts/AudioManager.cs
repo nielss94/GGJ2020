@@ -5,9 +5,11 @@ public class AudioManager : MonoBehaviour
 {
     public AudioSource efxSource;                    //Drag a reference to the audio source which will play the sound effects.
     public AudioSource musicSource;
+    public AudioSource collisionSource;
     public AudioClip[] songs;
     public AudioClip[] engineSounds;
     public AudioClip[] pickupSounds;
+    public AudioClip[] collisionSounds;
 
     public static AudioManager instance = null;        //Allows other scripts to call functions from SoundManager.                
     public float lowPitchRange = .95f;                //The lowest a sound effect will be randomly pitched.
@@ -35,7 +37,7 @@ public class AudioManager : MonoBehaviour
 
     void Setup()
     {
-     //   SwapSong(songs[songNumber]);
+        SwapSong(songs[songNumber], songNumber);
     }
 
     //Used to play single sound clips.
@@ -54,13 +56,36 @@ public class AudioManager : MonoBehaviour
         efxSource.clip = clip;
         efxSource.loop = true;
         //Play the clip.
+       // efxSource.volume = 0.01f;
         efxSource.Play();
     }
 
-    public void SwapSong(AudioClip clip)
+    public void SwapSong(AudioClip clip, int index)
     {
+        float volume = 1.0f;
+        switch (index)
+        {
+            case 0:
+                volume = 0.8f;
+                break;
+            case 1:
+                volume = 1.0f;
+                break;
+            case 2:
+                volume = 0.25f;
+                break;
+            case 3:
+                volume = 0.4f;
+                break;
+            case 4:
+                volume = 1.0f;
+                break;
+            default:
+                break;
+        }
         musicSource.clip = clip;
         musicSource.loop = true;
+        musicSource.volume = volume;
         musicSource.Play();
     }
 
@@ -90,7 +115,7 @@ public class AudioManager : MonoBehaviour
         if (songNumber < songs.Length - 1)
         {
             songNumber++;
-            SwapSong(songs[songNumber]);
+            SwapSong(songs[songNumber], songNumber);
         }
     }
 
@@ -99,7 +124,7 @@ public class AudioManager : MonoBehaviour
         if (songNumber > 0)
         {
             songNumber--;
-            SwapSong(songs[songNumber]);
+            SwapSong(songs[songNumber], songNumber);
         }
     }
 
@@ -125,6 +150,11 @@ public class AudioManager : MonoBehaviour
     {
         PlayLoop(pickupSounds[index]);
     } 
+
+   public void PlayCollisionSound()
+   {
+        RandomizeSfx(pickupSounds);
+   } 
 
 
 }

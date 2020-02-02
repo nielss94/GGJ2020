@@ -10,6 +10,7 @@ public class PlayerPickUp : MonoBehaviour
     private GameObject _hovering = null;
     private GameObject _currentPickUp = null;
     public bool HasCurrentPickup => _currentPickUp != null;
+    public GameObject CurrentPickUp => _currentPickUp;
     
     private List<GameObject> _hoverings = new List<GameObject>();
     private ConveyorBelt _conveyorBelt = null;
@@ -54,5 +55,10 @@ public class PlayerPickUp : MonoBehaviour
             _conveyorBelt.RemoveFromBelt(_hovering);
             _currentPickUp = _hovering;
         }
+    }
+
+    public void Drop()
+    {
+        Destroy(_currentPickUp);
     }
 }

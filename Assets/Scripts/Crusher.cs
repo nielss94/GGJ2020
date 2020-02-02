@@ -6,13 +6,12 @@ using UnityEngine;
 public class Crusher : MonoBehaviour
 {
     [SerializeField] private ConveyorBelt _conveyorBelt = null;
-    [SerializeField] private GameObject conveyorPartSample = null;
     
     private void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent(out Resource resource))
         {
-            _conveyorBelt.AddToBelt(conveyorPartSample);
+            _conveyorBelt.AddToBelt(resource.part);
             Destroy(resource.gameObject);
             AudioManager.instance.PlayPickupSounds(0);
         }
