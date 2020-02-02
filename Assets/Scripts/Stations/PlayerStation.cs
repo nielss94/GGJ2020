@@ -118,6 +118,8 @@ public class PlayerStation : MonoBehaviour
         _activeStation.OnIsRepaired -= SetStationAsPossibleWhenRepaired;
         RemoveCurrentActiveStation();
         SetPossibleStation(station);
+        
+        AudioManager.instance.DecreaseDanger();
     }
 
     private void RemoveCurrentActiveStation()
