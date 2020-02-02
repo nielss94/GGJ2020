@@ -56,20 +56,14 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 1be67c255bcf84c2e96cbd271198228c, type: 3}
   - {fileID: 8300000, guid: 4a1fed1bb2c294500bd5da472251a487, type: 3}
   engineSounds:
-  - {fileID: 8300000, guid: 8a9c337d83716ea4cb909e9ceb3295a3, type: 3}
+  - {fileID: 8300000, guid: 0a4bed915f12ecc4d92e69548de279f0, type: 3}
   - {fileID: 8300000, guid: deb2573230481364db10624631db8c2f, type: 3}
   - {fileID: 8300000, guid: ed42175ff8e529f4e8433367530f1892, type: 3}
   - {fileID: 8300000, guid: 119a68544cac2684d8723678910d81e4, type: 3}
   pickupSounds:
   - {fileID: 8300000, guid: 0d5bcaa6e2a1c6a4bbd22c6b1064617f, type: 3}
   collisionSounds:
-  - {fileID: 8300000, guid: de976046ff34423419f820fb06abde33, type: 3}
-  - {fileID: 8300000, guid: b07188e76a13e1f4ba201a5e39a5f8c0, type: 3}
-  - {fileID: 8300000, guid: 249310021798a8b45b945d6c8b72c8e0, type: 3}
-  - {fileID: 8300000, guid: a3aa40f6f94fcaf4db0a5d62fe1ec632, type: 3}
   - {fileID: 8300000, guid: b22c40e6d2b5616438ac84252d19d9c5, type: 3}
-  - {fileID: 8300000, guid: c233ae75e14b9c6489398d11738a496e, type: 3}
-  - {fileID: 8300000, guid: 0c85ed3224dd1c74983a765dd9011bcd, type: 3}
   enemySounds:
   - {fileID: 8300000, guid: ccdde7641ba66224b84f605e19f52e36, type: 3}
   - {fileID: 8300000, guid: 3c948ed4bb3288641b886da7953ccd11, type: 3}
