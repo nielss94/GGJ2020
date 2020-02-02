@@ -6,7 +6,8 @@ using UnityEngine;
 public class SphereControls : MonoBehaviour
 {
     [SerializeField] private float baseSpeed = 3f;
-	[SerializeField] private float rotateMultiplier = 1f;
+    [SerializeField] private float accelerationMultiplier = 1.5f;
+	[SerializeField] private float steerSpeed = 10f;
 
     private Vector3 _move;
     public Vector3 Move => _move;
@@ -14,7 +15,7 @@ public class SphereControls : MonoBehaviour
 
     private void Awake()
     {
-        _move.x = -(baseSpeed / 2);
+        _move.x = -baseSpeed;
     }
 
     private void Update()
@@ -22,8 +23,20 @@ public class SphereControls : MonoBehaviour
         transform.Rotate(_move * Time.deltaTime, Space.World);
     }
 
-    public void Rotate(Vector3 move)
+    public void Steer(Vector3 move)
     {
-        _move.y = move.x * baseSpeed * -1 * rotateMultiplier;
+        _move.y = move.x * -steerSpeed;
+    }
+
+    public void Accelerate(Vector3 move)
+    {
+        if (move.z > 0)
+        {
+            _move.x = -baseSpeed * accelerationMultiplier;
+        }
+        else
+        {
+            _move.x = -baseSpeed;
+        }
     }
 }
