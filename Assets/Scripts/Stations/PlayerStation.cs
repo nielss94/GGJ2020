@@ -14,7 +14,10 @@ public class PlayerStation : MonoBehaviour
     public event Action<Station> OnActiveStationDeselected = delegate(Station station) { };
     
     public event Action<Station> OnNotTheRightMaterial = delegate(Station station) {  };
-
+    public event Action OnRepairStarted = delegate {  };
+    public event Action OnRepairEnded = delegate {  };
+    public event Action<float> OnRepairTimeChanged = delegate {  };
+    
     private PlayerPickUp _playerPickUp = null;
     
     private Station _possibleStation;
@@ -32,6 +35,14 @@ public class PlayerStation : MonoBehaviour
     {
         _playerPickUp = GetComponentInChildren<PlayerPickUp>();
         GameManager.OnGameStarted += EnableStationChoosing;
+    }
+
+    private void Update()
+    {
+        if (_isRepairing)
+        {
+            OnRepairTimeChanged.Invoke(_activeStation.TimeLeftForRepairing);
+        }
     }
 
     private void EnableStationChoosing()
@@ -68,6 +79,7 @@ public class PlayerStation : MonoBehaviour
                 {
                     _activeStation.OnIsRepaired -= SetStationAsPossibleWhenRepaired;
                     _isRepairing = false;
+                    OnRepairEnded.Invoke();
                 }
 
                 SetPossibleStation(_activeStation);
@@ -117,6 +129,7 @@ public class PlayerStation : MonoBehaviour
     private void SetStationAsPossibleWhenRepaired(Station station)
     {
         _isRepairing = false;
+        OnRepairEnded.Invoke();
         _activeStation.OnIsRepaired -= SetStationAsPossibleWhenRepaired;
         RemoveCurrentActiveStation();
         SetPossibleStation(station);

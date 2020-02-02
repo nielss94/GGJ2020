@@ -14,17 +14,22 @@ public class PlayerStationButtonPrompt : MonoBehaviour
     [SerializeField]
     private GameObject repairButtonPrompt = null;
     [SerializeField]
+    private GameObject repairingImagePrompt = null;
+    [SerializeField]
     private PlayerStation playerStation = null;
     [SerializeField]
     private Transform materialPromptLocation = null;
+    [SerializeField]
+    private Transform repairPromptLocation = null;
     [SerializeField]
     private GameObject needMaterialsPrompt = null;
     
 
     private GameObject _useButtonPromptInstance = null;
     private GameObject _repairButtonPromptInstance = null;
+    private GameObject _repairingImagePromptInstance = null;
     private GameObject _materialPromptInstance = null;
-
+    
 
     private void Awake()
     {
@@ -33,6 +38,9 @@ public class PlayerStationButtonPrompt : MonoBehaviour
 
         _repairButtonPromptInstance = Instantiate(repairButtonPrompt, GameObject.FindGameObjectWithTag("UI").transform);
         _repairButtonPromptInstance.SetActive(false);
+        
+        _repairingImagePromptInstance = Instantiate(repairingImagePrompt, GameObject.FindGameObjectWithTag("UI").transform);
+        _repairingImagePromptInstance.SetActive(false);
         
         _materialPromptInstance = Instantiate(needMaterialsPrompt, GameObject.FindGameObjectWithTag("UI").transform);
         _materialPromptInstance.SetActive(false);
@@ -43,6 +51,14 @@ public class PlayerStationButtonPrompt : MonoBehaviour
         playerStation.OnPossibleStationSelected += EnableButtonPrompt;
         playerStation.OnPossibleStationDeselected += DisableButtonPrompt;
         playerStation.OnNotTheRightMaterial += PlayNotTheRightMaterial; 
+        playerStation.OnRepairTimeChanged += UpdateRadialFill;
+        playerStation.OnRepairEnded += () => { _repairingImagePromptInstance.SetActive(false); };
+    }
+
+    private void UpdateRadialFill(float time)
+    {
+        _repairingImagePromptInstance.SetActive(true);
+        _repairingImagePromptInstance.GetComponentInChildren<Image>().fillAmount = time / 3;
     }
 
 
@@ -82,12 +98,15 @@ public class PlayerStationButtonPrompt : MonoBehaviour
 
     private void Update()
     {
-        Vector3 buttonPromptPosition = Camera.main.WorldToScreenPoint(buttonPromptLocation.position);
+        var camm = Camera.main;
+        Vector3 buttonPromptPosition = camm.WorldToScreenPoint(buttonPromptLocation.position);
+        Vector3 repairingImagePosition = camm.WorldToScreenPoint(repairPromptLocation.position);
         
         _useButtonPromptInstance.transform.position = buttonPromptPosition;
         _repairButtonPromptInstance.transform.position = buttonPromptPosition;
+        _repairingImagePromptInstance.transform.position = repairingImagePosition;
         
-        Vector3 materialPromptPosition = Camera.main.WorldToScreenPoint(materialPromptLocation.position);
+        Vector3 materialPromptPosition = camm.WorldToScreenPoint(materialPromptLocation.position);
         _materialPromptInstance.transform.position = materialPromptPosition;
     }
 }
