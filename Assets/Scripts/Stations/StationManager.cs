@@ -32,5 +32,7 @@ public class StationManager : MonoBehaviour
         int random = Random.Range(0, activeStations.Count);
         
         activeStations[random].Damage();
+
+        AudioManager.instance.IncreaseDanger();
     }
 }
