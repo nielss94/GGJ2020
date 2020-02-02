@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 public abstract class Station : MonoBehaviour
 {
     public event Action<Station> OnIsRepaired = delegate(Station station) { };
-
+    public PickUpTypes repairType;
     [SerializeField]
     private bool isHoldInteraction = false;
     [SerializeField]
