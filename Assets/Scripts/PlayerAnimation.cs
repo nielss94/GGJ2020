@@ -42,6 +42,13 @@ public class PlayerAnimation : MonoBehaviour
         _curStation = station;
         _animator.SetBool("Walking", false);
 
+        if (station.IsBroken)
+        {
+            if(!_animator.GetBool("Repairing"))
+                _animator.SetBool("Repairing", true);
+            return;
+        }
+        
         switch (station)
         {
             case SteeringWheel _:
@@ -54,6 +61,8 @@ public class PlayerAnimation : MonoBehaviour
     
     private void SetActiveStationDeselected(Station station)
     {
+        _animator.SetBool("Repairing", false);
+        
         switch (_curStation)
         {
             case SteeringWheel _:
