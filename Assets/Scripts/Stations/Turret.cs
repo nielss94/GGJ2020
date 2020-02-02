@@ -12,7 +12,7 @@ public class Turret : Station
     [SerializeField]
     private float minRotation = 200f;
     [SerializeField]
-    private Transform centerPoint = null;
+    private bool reverseMovement = false;
 
     private float _yMovement;
     private float _xRotation;
@@ -23,6 +23,11 @@ public class Turret : Station
         
         float turnSpeed = rotateSpeed * Time.deltaTime;
         float rotate = -(_yMovement * turnSpeed);
+
+        if (reverseMovement)
+        {
+            rotate = -rotate;
+        }
 
         if (rotate > 0 && transform.eulerAngles.y < maxRotation || rotate < 0 && transform.eulerAngles.y > minRotation)
             transform.Rotate(Vector3.forward * rotate);
