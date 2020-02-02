@@ -11,6 +11,8 @@ public abstract class Station : MonoBehaviour
     [SerializeField]
     private bool isHoldInteraction = false;
     [SerializeField]
+    private float health = 3;
+    [SerializeField]
     private bool startBroken = false;
     [SerializeField]
     private float repairTimer = 3f;
@@ -94,5 +96,14 @@ public abstract class Station : MonoBehaviour
     public void StartRepair()
     {
         _startedRepair = true;
+    }
+
+    public void Damage()
+    {
+        health--;
+        if (health <= 0)
+        {
+            Break();
+        }
     }
 }
