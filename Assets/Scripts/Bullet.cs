@@ -27,7 +27,6 @@ public class Bullet : MonoBehaviour
     {
         if (other.CompareTag("BulletImpact") && CompareTag("EnemyBullet"))
         {
-            Instantiate(impactParticle, transform.position, Quaternion.identity);
             StationManager.Instance.DamageRandomStation();
             Destroy(gameObject);
         }

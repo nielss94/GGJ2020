@@ -28,7 +28,7 @@ public class StationManager : MonoBehaviour
         foreach (Station station in stations)
         {
             station.OnIsBroken += IncreaseBroken;
-            station.OnIsRepaired -= DecreaseBroken;
+            station.OnIsRepaired += DecreaseBroken;
         }
     }
 
@@ -54,6 +54,5 @@ public class StationManager : MonoBehaviour
         
         activeStations[random].Damage();
 
-        AudioManager.instance.IncreaseDanger();
     }
 }
