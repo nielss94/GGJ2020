@@ -20,7 +20,8 @@ public class SteeringWheel : Station
         
         if (IsActive && !IsBroken)
         {
-            _sphereControls.Rotate(_move);
+            _sphereControls.Steer(_move);
+            _sphereControls.Accelerate(_move);
 
             float steerInput = _move.x * steerRotation;
             wheelAngle = Mathf.Lerp(wheelAngle, steerInput, steerSpeed *            Time.deltaTime);
@@ -35,7 +36,8 @@ public class SteeringWheel : Station
     {
         base.Terminate();
         _move = Vector3.zero;
-        _sphereControls.Rotate(_move);
+        _sphereControls.Steer(_move);
+        _sphereControls.Steer(_move);
     }
 
     public override void ProcessInput(InputValue value)
