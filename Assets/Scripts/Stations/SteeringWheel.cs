@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 
 public class SteeringWheel : Station
 {
-    [SerializeField] private SphereControls _sphereControls = null;
+    [SerializeField] private Hovercar _hovercar = null;
     
     private Vector3 _move;
     
@@ -16,7 +16,7 @@ public class SteeringWheel : Station
         
         if (IsActive && !IsBroken)
         {
-            _sphereControls.Rotate(_move);
+            _hovercar.Vroom(_move);
         }
     }
 
@@ -24,7 +24,7 @@ public class SteeringWheel : Station
     {
         base.Terminate();
         _move = Vector3.zero;
-        _sphereControls.Rotate(_move);
+        _hovercar.Vroom(_move);
     }
 
     public override void ProcessInput(InputValue value)
