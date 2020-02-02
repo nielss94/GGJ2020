@@ -10,6 +10,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip[] engineSounds;
     public AudioClip[] pickupSounds;
     public AudioClip[] collisionSounds;
+    public AudioClip[] enemySounds;
 
     public static AudioManager instance = null;        //Allows other scripts to call functions from SoundManager.                
     public float lowPitchRange = .95f;                //The lowest a sound effect will be randomly pitched.
@@ -154,7 +155,12 @@ public class AudioManager : MonoBehaviour
    public void PlayCollisionSound()
    {
         RandomizeSfx(pickupSounds);
-   } 
+   }
 
+    public void PlayEnemySound(int index)
+    {
+        PlaySingle(enemySounds[index]);
+
+    }
 
 }

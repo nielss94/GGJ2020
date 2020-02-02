@@ -11,15 +11,19 @@ public class SphereControls : MonoBehaviour
 
     private Vector3 _move;
     public Vector3 Move => _move;
-    
+
+    private Furnace _furnace;
+    private int _currentFuel = 3;
 
     private void Awake()
     {
-        _move.x = -baseSpeed;
+        _furnace = FindObjectOfType<Furnace>();
+        _furnace.OnFurnaceFuelChanged += OnFuelChanged;
     }
 
     private void Update()
     {
+        _move.x = -baseSpeed * (_currentFuel + 1);
         transform.Rotate(_move * Time.deltaTime, Space.World);
     }
 
@@ -28,15 +32,20 @@ public class SphereControls : MonoBehaviour
         _move.y = move.x * -steerSpeed;
     }
 
-    public void Accelerate(Vector3 move)
+    // public void Accelerate(Vector3 move)
+    // {
+    //     if (move.z > 0)
+    //     {
+    //         _move.x = -baseSpeed * accelerationMultiplier;
+    //     }
+    //     else
+    //     {
+    //         _move.x = -baseSpeed;
+    //     }
+    // }
+
+    private void OnFuelChanged(int fuel)
     {
-        if (move.z > 0)
-        {
-            _move.x = -baseSpeed * accelerationMultiplier;
-        }
-        else
-        {
-            _move.x = -baseSpeed;
-        }
+        _currentFuel = fuel;
     }
 }
