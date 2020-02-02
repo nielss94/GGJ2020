@@ -20,7 +20,6 @@ public class SphereControls : MonoBehaviour
 
     private void Update()
     {
-        DebugGUI.Log(_move);
         transform.Rotate(_move * Time.deltaTime, Space.World);
     }
 
