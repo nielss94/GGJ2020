@@ -15,7 +15,7 @@ public class TireRotation : MonoBehaviour
     private void Update()
     {
         if(_sphereControls)
-            transform.Rotate(Vector3.right * (_sphereControls.Move.x * 10 * Time.deltaTime), Space.Self);
+            transform.Rotate(Vector3.right * (_sphereControls.Move.x * 20 * Time.deltaTime), Space.Self);
     }
 
 }
