@@ -56,10 +56,15 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 1be67c255bcf84c2e96cbd271198228c, type: 3}
   - {fileID: 8300000, guid: 4a1fed1bb2c294500bd5da472251a487, type: 3}
   engineSounds:
-  - {fileID: 8300000, guid: a64f73df83170d74ba725f60dafa5b04, type: 3}
-  - {fileID: 8300000, guid: 24a0b6eb20bb02a48a278749c52700cb, type: 3}
-  pickupSounds: []
-  collisionSounds: []
+  - {fileID: 8300000, guid: 8a9c337d83716ea4cb909e9ceb3295a3, type: 3}
+  - {fileID: 8300000, guid: deb2573230481364db10624631db8c2f, type: 3}
+  - {fileID: 8300000, guid: ed42175ff8e529f4e8433367530f1892, type: 3}
+  - {fileID: 8300000, guid: 119a68544cac2684d8723678910d81e4, type: 3}
+  pickupSounds:
+  - {fileID: 8300000, guid: 4d1e72fde041de942a30e2c577bf8b8e, type: 3}
+  collisionSounds:
+  - {fileID: 8300000, guid: 249310021798a8b45b945d6c8b72c8e0, type: 3}
+  - {fileID: 8300000, guid: b07188e76a13e1f4ba201a5e39a5f8c0, type: 3}
   lowPitchRange: 0.95
   highPitchRange: 1.05
 --- !u!82 &-3807503303954761470
@@ -73,7 +78,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 7761192046676783416, guid: 9a5f94beec7ca4093874d58b8e9330a6,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: a64f73df83170d74ba725f60dafa5b04, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 8a9c337d83716ea4cb909e9ceb3295a3, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.45
   m_Pitch: 1
