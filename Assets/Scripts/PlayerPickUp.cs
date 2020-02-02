@@ -5,8 +5,11 @@ using UnityEngine;
 
 public class PlayerPickUp : MonoBehaviour
 {
+    [SerializeField] private Transform pickUpPos;
+    
     private GameObject _hovering = null;
     private GameObject _currentPickUp = null;
+    public bool HasCurrentPickup => _currentPickUp != null;
     
     private List<GameObject> _hoverings = new List<GameObject>();
     private ConveyorBelt _conveyorBelt = null;
@@ -45,7 +48,9 @@ public class PlayerPickUp : MonoBehaviour
     {
         if (_hovering != null && _currentPickUp == null)
         {
-            _hovering.transform.SetParent(transform);
+            _hovering.transform.SetParent(pickUpPos);
+            _hovering.transform.localPosition = Vector3.zero;
+            _hovering.GetComponent<Collider>().isTrigger = true;
             _conveyorBelt.RemoveFromBelt(_hovering);
             _currentPickUp = _hovering;
         }
