@@ -7,8 +7,12 @@ using UnityEngine.InputSystem;
 public class SteeringWheel : Station
 {
     [SerializeField] private SphereControls _sphereControls = null;
+    [SerializeField] private GameObject[] steeringWheels;
+    [SerializeField] private float steerRotation;
+    [SerializeField] private float steerSpeed;
     
     private Vector3 _move;
+    private float wheelAngle;
     
     private void Update()
     {
@@ -17,6 +21,13 @@ public class SteeringWheel : Station
         if (IsActive && !IsBroken)
         {
             _sphereControls.Rotate(_move);
+
+            float steerInput = _move.x * steerRotation;
+            wheelAngle = Mathf.Lerp(wheelAngle, steerInput, steerSpeed *            Time.deltaTime);
+            foreach (GameObject wheel in steeringWheels)
+            {
+                wheel.transform.localRotation = Quaternion.Euler(wheel.transform.localRotation.x, wheel.transform.localRotation.y + wheelAngle, transform.localRotation.z);
+            }
         }
     }
 
