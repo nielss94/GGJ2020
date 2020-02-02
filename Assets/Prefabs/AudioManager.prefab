@@ -45,12 +45,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22d1a4ee9606b104f91c1657dab80848, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  efxSource: {fileID: 158258950756018809}
-  musicSource: {fileID: 0}
-  songs: []
+  efxSource: {fileID: -3807503303954761470}
+  musicSource: {fileID: 158258950756018809}
+  songs:
+  - {fileID: 8300000, guid: 6656809db7b2a484e8cbdeb3fdc1ae05, type: 3}
+  - {fileID: 8300000, guid: 16aebb9f2cc10443eafaaebf910977a7, type: 3}
+  - {fileID: 8300000, guid: 07adb5e0fabf54cd4b644650b39026b5, type: 3}
+  - {fileID: 8300000, guid: 1be67c255bcf84c2e96cbd271198228c, type: 3}
+  - {fileID: 8300000, guid: 4a1fed1bb2c294500bd5da472251a487, type: 3}
   engineSounds:
   - {fileID: 8300000, guid: a64f73df83170d74ba725f60dafa5b04, type: 3}
   - {fileID: 8300000, guid: 24a0b6eb20bb02a48a278749c52700cb, type: 3}
+  pickupSounds: []
   lowPitchRange: 0.95
   highPitchRange: 1.05
 --- !u!82 &-3807503303954761470
@@ -62,10 +68,11 @@ AudioSource:
   m_GameObject: {fileID: 7001116311016323452}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 7761192046676783416, guid: 9a5f94beec7ca4093874d58b8e9330a6,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: a64f73df83170d74ba725f60dafa5b04, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.45
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -158,9 +165,10 @@ AudioSource:
   m_GameObject: {fileID: 7001116311016323452}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -1419036972340125845, guid: 9a5f94beec7ca4093874d58b8e9330a6,
+    type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
