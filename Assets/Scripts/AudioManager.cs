@@ -73,10 +73,10 @@ public class AudioManager : MonoBehaviour
                 volume = 1.0f;
                 break;
             case 2:
-                volume = 0.25f;
+                volume = 0.4f;
                 break;
             case 3:
-                volume = 0.4f;
+                volume = 0.25f;
                 break;
             case 4:
                 volume = 1.0f;
