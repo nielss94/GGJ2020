@@ -7,11 +7,13 @@ public class AudioManager : MonoBehaviour
     public AudioSource musicSource;
     public AudioClip[] songs;
     public AudioClip[] engineSounds;
+    public AudioClip[] pickupSounds;
 
     public static AudioManager instance = null;        //Allows other scripts to call functions from SoundManager.                
     public float lowPitchRange = .95f;                //The lowest a sound effect will be randomly pitched.
     public float highPitchRange = 1.05f;            //The highest a sound effect will be randomly pitched.
     int songNumber = 0;
+
 
     void Awake()
     {
@@ -117,7 +119,12 @@ public class AudioManager : MonoBehaviour
     public void PlayEngineSounds(int index)
     {
         PlayLoop(engineSounds[index]);
-
     }
+
+    public void PlayPickupSounds(int index)
+    {
+        PlayLoop(pickupSounds[index]);
+    } 
+
 
 }
