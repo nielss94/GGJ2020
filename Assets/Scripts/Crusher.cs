@@ -12,6 +12,7 @@ public class Crusher : MonoBehaviour
     {
         if (other.TryGetComponent(out Resource resource))
         {
+            print("ASD");
             _conveyorBelt.AddToBelt(conveyorPartSample);
             Destroy(resource.gameObject);
         }

@@ -6,12 +6,14 @@ using UnityEngine;
 public class SphereControls : MonoBehaviour
 {
     [SerializeField] private float baseSpeed = 3f;
-    
+
     private Vector3 _move;
+    public Vector3 Move => _move;
+    
 
     private void Awake()
     {
-        _move.x = -baseSpeed;
+        _move.x = -(baseSpeed / 2);
     }
 
     private void Update()
