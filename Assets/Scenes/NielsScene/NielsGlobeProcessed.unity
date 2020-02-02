@@ -3952,12 +3952,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 224467897}
-  m_LocalRotation: {x: 0.7009671, y: 0.6935535, z: 0.08074552, w: 0.14528918}
-  m_LocalPosition: {x: -844, y: 497.0003, z: 774.001}
+  m_LocalRotation: {x: 0.39292356, y: 0.54751205, z: -0.43332064, w: 0.5983935}
+  m_LocalPosition: {x: -844, y: 774.00104, z: -497.0005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 2029391854}
-  m_RootOrder: 2
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 70.864006, y: 73.759, z: -15.632001}
 --- !u!1 &224993120 stripped
 GameObject:
@@ -23040,6 +23040,10 @@ PrefabInstance:
       propertyPath: VelocityModule.inWorldSpace
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 83818096, guid: 2b3afcbebbf92e147943822a2301fc88, type: 3}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
     - target: {fileID: 1692783370, guid: 2b3afcbebbf92e147943822a2301fc88, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -23156,7 +23160,7 @@ PrefabInstance:
     - target: {fileID: 992725433216707190, guid: 2b3afcbebbf92e147943822a2301fc88,
         type: 3}
       propertyPath: startBroken
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 992725433216707190, guid: 2b3afcbebbf92e147943822a2301fc88,
         type: 3}
