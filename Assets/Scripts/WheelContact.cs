@@ -22,7 +22,6 @@ public class WheelContact : MonoBehaviour
 
         if (Physics.Raycast(transform.position, -transform.up, out RaycastHit hit, maxExtension + wheelRadius))
         {
-            Debug.Log("HIT!");
             _currentExtension = hit.distance - wheelRadius;
         }
         else
