@@ -13,9 +13,21 @@ public class Turret : Station
     private float minRotation = 200f;
     [SerializeField]
     private bool reverseMovement = false;
+    [SerializeField]
+    private float shootDelay = 1f;
+
+    [SerializeField]
+    private GameObject bullet;
+    [SerializeField]
+    private ParticleSystem[] muzzleFlashes;
+    [SerializeField]
+    private Transform[] barrelTransforms;
+    
+    
 
     private float _yMovement;
     private float _xRotation;
+    private bool _canShoot = true;
 
     private void Update()
     {
@@ -37,5 +49,40 @@ public class Turret : Station
     {
         Vector2 input = value.Get<Vector2>();
         _yMovement = input.y;
+    }
+
+    public void Shoot()
+    {
+        if(!_canShoot) return;
+
+        PlayMuzzleFlashes();
+        SpawnBullets();
+
+        StartCoroutine(DelayShooting());
+    }
+
+    private void SpawnBullets()
+    {
+        foreach (Transform barrelTransform in barrelTransforms)
+        {
+            Instantiate(bullet, barrelTransform.position, barrelTransform.rotation * Quaternion.Euler(90, -90, 0));
+        }
+    }
+
+    private void PlayMuzzleFlashes()
+    {
+        foreach (ParticleSystem muzzleFlash in muzzleFlashes)
+        {
+            muzzleFlash.Emit(1);
+        }
+    }
+
+    private IEnumerator DelayShooting()
+    {
+        _canShoot = false;
+        
+        yield return new WaitForSeconds(shootDelay);
+
+        _canShoot = true;
     }
 }
